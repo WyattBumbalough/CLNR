@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bwbnqokyddu2c"]
+
+[ext_resource type="Script" uid="uid://drj8tiw71ykwb" path="res://src/common/Spawner/spawner.gd" id="1_k52uv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2ty7"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.4117647, 1, 0.36862746, 0.07058824)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k52uv"]
+material = SubResource("StandardMaterial3D_p2ty7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2jya"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.4117647, 1, 0.36862746, 0.07058824)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vgppc"]
+material = SubResource("StandardMaterial3D_x2jya")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5eam"]
+transparency = 1
+albedo_color = Color(1, 0.61960787, 0, 0.3764706)
+emission_enabled = true
+emission = Color(1, 0.61875, 0, 1)
+emission_energy_multiplier = 7.44
+
+[sub_resource type="PrismMesh" id="PrismMesh_xxspu"]
+material = SubResource("StandardMaterial3D_i5eam")
+size = Vector3(1.04, 1.575, 0.405)
+
+[node name="Spawner" type="Node3D" unique_id=514326950]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("1_k52uv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=467173935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_k52uv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1164274262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+mesh = SubResource("SphereMesh_vgppc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=206710855]
+transform = Transform3D(0.333, 0, 0, 0, -1.45558925e-08, 0.333, 0, -0.333, -1.45558925e-08, 0, 1.25, -0.75)
+mesh = SubResource("PrismMesh_xxspu")

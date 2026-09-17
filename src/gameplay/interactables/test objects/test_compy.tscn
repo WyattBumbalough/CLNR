@@ -1,0 +1,69 @@
+[gd_scene format=4 uid="uid://dkpwt85t5ie6o"]
+
+[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="1_d02ph"]
+[ext_resource type="Script" uid="uid://cocpu62mrsibx" path="res://src/gameplay/interactables/test objects/test_compy.gd" id="1_jyn3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdwue"]
+albedo_color = Color(0.9019608, 0.92156863, 0.8392157, 1)
+metallic_specular = 0.0
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d02ph"]
+albedo_color = Color(0, 0.68124986, 1, 1)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0, 0.47125006, 0.690625, 1)
+emission_energy_multiplier = 6.17
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jyn3s"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25000003, 1, 1, 0.50000006),
+"attribute_data": PackedByteArray("AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAADgv8Q9AADNPfzXOz8AAM09AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAPzXOz8AAM09AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAAAAAOC/xD0AAM09AAAAAAAAAADgv8Q9AGBmP+C/xD0AAM09AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD/81zs/AADNPfzXOz8AYGY/AACAPwAAgD/81zs/AGBmPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD/gv8Q9AGBmPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD/81zs/AGBmP+C/xD0AYGY/"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_gdwue"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 54,
+"vertex_data": PackedByteArray("AAAAvwAAAAABAIC+AAAAvwAAgD///38+AAAAvwAAAAD//38+AAAAvwAAAAD//38+AMDMvgRoZz///38+AMDMvghQiD7//38+AAAAvwAAAAABAIC+AAAAvwAAAAD//38+AAAAPwAAAAABAIA+AAAAPwAAAAABAIA+AAAAvwAAAAD//38+AMDMvghQiD7//38+AAAAvwAAAAABAIC+AAAAvwAAgD8BAIC+AAAAvwAAgD///38+AAAAvwAAAAABAIC+AAAAPwAAgD///3++AAAAvwAAgD8BAIC+AAAAPwAAgD///3++AAAAvwAAgD///38+AAAAvwAAgD8BAIC+AAAAvwAAAAD//38+AAAAvwAAgD///38+AMDMvgRoZz///38+AAAAvwAAgD///38+AMDMPgRoZz8BAIA+AMDMvgRoZz///38+AAAAPwAAAAD//3++AAAAvwAAAAABAIC+AAAAPwAAAAABAIA+AAAAPwAAAAD//3++AAAAPwAAgD///3++AAAAvwAAAAABAIC+AAAAPwAAAAD//3++AAAAPwAAAAABAIA+AAAAPwAAgD///3++AAAAPwAAAAABAIA+AMDMvghQiD7//38+AMDMPghQiD4BAIA+AAAAPwAAAAABAIA+AMDMPghQiD4BAIA+AAAAPwAAgD8BAIA+AAAAPwAAgD///3++AAAAPwAAgD8BAIA+AAAAvwAAgD///38+AAAAPwAAgD8BAIA+AMDMPgRoZz8BAIA+AAAAvwAAgD///38+AAAAPwAAgD///3++AAAAPwAAAAABAIA+AAAAPwAAgD8BAIA+AAAAPwAAgD8BAIA+AMDMPghQiD4BAIA+AMDMPgRoZz8BAIA+AAD/f///AAAAAP9///8AAAAA/3///wAA/3//f/9//n//f/9//3/+f/9//3//f/5//38AAP///z//fwAA////P/9/AAD///8//3//f/9//n//f/9//3/+f/9//3//f/5/AAD/f///AAAAAP9///8AAAAA/3///wAA//////9//n///////3/+f///////f/5//3///////z//f///////P/9///////8//3//f/9//n//f/9//3/+f/9//3//f/5//3//f/9//n//f/9//3/+f/9//3//f/5//38AAP///z//fwAA////P/9/AAD///8///////9//n///////3/+f///////f/5/////f///AAD///9///8AAP///3///wAA/3//f/9//n//f/9//3/+f/9//3//f/5//3//f/9//n//f/9//3/+f/9//3//f/5//3///////z//f///////P/9///////8//3//f/9//n//f/9//3/+f/9//3//f/5/////f///AAD///9///8AAP///3///wAA/3//f/9//n//f/9//3/+f/9//3//f/5/")
+}, {
+"aabb": AABB(-0.39990234, 0.2662356, 0.17199706, 0.7998047, 0.6376953, 0.078002974),
+"attribute_data": PackedByteArray("AACAPwAAgD+5vck+AACAP7m9yT4AAAAAAACAPwAAAAAAAAAAIyEbPwAAAAAAAAAAAACAPwAAgD+5vck+AAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAub3JPgAAgD+5vck+AACAPwAAAAAAAIA/IyEbPwAAAAAjIRs/AACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAP7m9yT4AAAAAAACAPwAAgD8AAAAAAACAPwAAgD+5vck+AACAPwAAgD+5vck+AACAP7m9yT4AAAAA"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_d02ph"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("AMDMvghQiD7/HzA+AMDMvghQiD7//38+AMDMvgRoZz///38+AMDMPghQiD4BIDA+AMDMvghQiD7//38+AMDMvghQiD7/HzA+AMDMvghQiD7/HzA+AMDMvgRoZz///38+AMDMvgRoZz//HzA+AMDMvghQiD7/HzA+AMDMvgRoZz//HzA+AMDMPgRoZz8BIDA+AMDMvgRoZz//HzA+AMDMvgRoZz///38+AMDMPgRoZz8BAIA+AMDMPghQiD4BIDA+AMDMPghQiD4BAIA+AMDMvghQiD7//38+AMDMPghQiD4BIDA+AMDMvghQiD7/HzA+AMDMPgRoZz8BIDA+AMDMPghQiD4BIDA+AMDMPgRoZz8BIDA+AMDMPghQiD4BAIA+AMDMPgRoZz8BIDA+AMDMvgRoZz//HzA+AMDMPgRoZz8BAIA+AMDMPgRoZz8BIDA+AMDMPgRoZz8BAIA+AMDMPghQiD4BAIA+////f/////////9//////////3///////3////7//7//f///////v/9///////+/////f/////////9//////////3///////3//f/9/AID/f/9//38AgP9//3//fwCA/38AAP7//7//fwAA/v//v/9/AAD///+//3////7//7//f////v//v/9///////+//3//f/9/AID/f/9//38AgP9//3//fwCAAAD/f/////8AAP9//////wAA/3///////38AAP///7//fwAA/v//v/9/AAD///+/AAD/f/////8AAP9//////wAA/3//////")
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6x17s"]
+size = Vector3(1.25, 1, 0.75)
+
+[node name="TestCompy" type="Node3D" unique_id=343982133 node_paths=PackedStringArray("interaction_area", "mesh")]
+script = ExtResource("1_jyn3s")
+interaction_area = NodePath("InteractionArea")
+mesh = NodePath("CSGBakedMeshInstance3D")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2129080015]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=907429507]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 0)
+size = Vector3(0.5, 1, 1)
+material = SubResource("StandardMaterial3D_gdwue")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=450749748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23635864, 0.085083246, 0)
+operation = 2
+size = Vector3(0.12872314, 0.6376953, 0.7998047)
+material = SubResource("StandardMaterial3D_d02ph")
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=99498334]
+mesh = SubResource("ArrayMesh_jyn3s")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1216576149]
+script = ExtResource("1_d02ph")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=344565671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.125)
+shape = SubResource("BoxShape3D_6x17s")

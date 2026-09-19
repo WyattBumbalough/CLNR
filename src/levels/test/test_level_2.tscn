@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_cbxxg"]
 [ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="4_lagnl"]
 [ext_resource type="Script" uid="uid://dcajapruvnovd" path="res://src/levels/test/payper.gd" id="5_lagnl"]
+[ext_resource type="AudioStream" uid="uid://2cc76tm2mfeo" path="res://assets/audio/randy_where.mp3" id="5_lkli5"]
 [ext_resource type="Texture2D" uid="uid://c5rf2g35omq33" path="res://assets/textures/materials/payper.png" id="6_8mbyg"]
 [ext_resource type="Texture2D" uid="uid://dwb33lfgy53fk" path="res://assets/textures/materials/note.png" id="7_6dynn"]
 [ext_resource type="Texture2D" uid="uid://cvo76s7x4chse" path="res://assets/textures/materials/BDRNUHM.png" id="7_cbxxg"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" uid="uid://m5xfugu8lagx" path="res://src/levels/test/he.gd" id="10_j26cx"]
 [ext_resource type="AudioStream" uid="uid://ccdlrrk2mhpcf" path="res://assets/audio/UI_note.mp3" id="12_nkqwq"]
 [ext_resource type="AudioStream" uid="uid://cvqjrj0gtgati" path="res://assets/audio/me_humming_paulstretch.mp3" id="13_j26cx"]
+[ext_resource type="Script" uid="uid://tqx51qoskveo" path="res://src/levels/test/he_2.gd" id="13_l78ke"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8hofm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -133,6 +135,11 @@ metadata/_custom_type_script = "uid://dachjs8n8lmbw"
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Visuals/TestDoor/InteractionArea" unique_id=1695317071]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.75, 1.75, 11.875)
 shape = SubResource("ConcavePolygonShape3D_8mbyg")
+
+[node name="where" type="AudioStreamPlayer3D" parent="Visuals/TestDoor" unique_id=1221620123]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3905015, 1.8169043, 7.245351)
+stream = ExtResource("5_lkli5")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Visuals" unique_id=2003586978]
 use_collision = true
@@ -329,9 +336,36 @@ metadata/_custom_type_script = "uid://dachjs8n8lmbw"
 transform = Transform3D(-1, 0, 1.5099593e-07, 0, 1, 0, -1.509958e-07, 0, -1, -8.134201, -0.5775337, -0.051198006)
 shape = SubResource("BoxShape3D_ww0yq")
 
+[node name="He2" type="Node3D" parent="." unique_id=1246062339 node_paths=PackedStringArray("interaction_area", "mesh")]
+transform = Transform3D(-0.00058378803, 0, 0.99980825, 0, 1, 0, -0.029807827, 0, -0.019581303, 3.612341, -0.17538548, 7.9739375)
+script = ExtResource("13_l78ke")
+interaction_area = NodePath("BDRInteract")
+mesh = NodePath("BDR2")
+
+[node name="BDR2" type="MeshInstance3D" parent="He2" unique_id=582487280]
+unique_name_in_owner = true
+transform = Transform3D(0.07109122, -0.9655607, -0.06978614, -0.02891462, 0.03932402, -1.6408738, 1.0186443, 0.06850274, -0.04170647, -5.304651, 1.7590039, 1.0630405)
+visible = false
+mesh = SubResource("PlaneMesh_eoewa")
+surface_material_override/0 = SubResource("StandardMaterial3D_g5ts4")
+
+[node name="BDRInteract" type="Area3D" parent="He2" unique_id=1354853466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.012344, 2.5992415, 1.2224756)
+script = ExtResource("4_cbxxg")
+metadata/_custom_type_script = "uid://dachjs8n8lmbw"
+
+[node name="BDRJUMP" type="CollisionShape3D" parent="He2/BDRInteract" unique_id=610132602]
+transform = Transform3D(-1, 0, 1.5099593e-07, 0, 1, 0, -1.509958e-07, 0, -1, -8.134201, -0.5775337, -0.051198006)
+shape = SubResource("BoxShape3D_ww0yq")
+
 [node name="HUH" type="AudioStreamPlayer3D" parent="." unique_id=1421685254]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8756256, 2.1454322, 1.2529668)
+stream = ExtResource("12_nkqwq")
+
+[node name="HUH2" type="AudioStreamPlayer3D" parent="." unique_id=143380043]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4336214, 2.5664818, 8.0798)
 stream = ExtResource("12_nkqwq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1446963322]
@@ -339,3 +373,4 @@ stream = ExtResource("13_j26cx")
 autoplay = true
 
 [connection signal="finished" from="HUH" to="He" method="_on_huh_finished"]
+[connection signal="finished" from="HUH2" to="He" method="_on_huh_finished"]

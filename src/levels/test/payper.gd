@@ -2,8 +2,8 @@ extends Interactable
 
 var noteface = 0
 
-func _on__looked_at():
-	mesh.material_overlay = mat_overlay
+#func _on__looked_at():
+	#mesh.material_overlay = mat_overlay
 
 func _on_interacted_with():
 	if noteface == 0:

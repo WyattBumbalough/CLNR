@@ -63,8 +63,9 @@ collide_with_bodies = false
 
 [node name="SHOTGUN" parent="Head/Camera/WeaponHolder" unique_id=566108784 instance=ExtResource("2_vgqeu")]
 transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, 0, -0.39541936, -0.38154942)
+visible = false
 
-[node name="Skeleton3D" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature" parent_id_path=PackedInt32Array(566108784, 980088631) index="0" unique_id=391958263]
+[node name="Skeleton3D" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature" parent_id_path=PackedInt32Array(566108784, 1753580527) index="0" unique_id=1099589049]
 bones/1/position = Vector3(17.015226, -24.465796, 32.269753)
 bones/2/position = Vector3(13.511108, 1.422874, -29.613306)
 bones/2/rotation = Quaternion(-0.42147923, -0.36738187, 0.64845854, 0.51661146)
@@ -96,16 +97,16 @@ bones/50/position = Vector3(1.6636262, 43.258568, 0.79246897)
 bones/51/position = Vector3(0.41215563, 8.6289015, 1.2661797)
 bones/51/rotation = Quaternion(3.2829114e-08, -4.0112063e-06, -4.0046885e-08, 1)
 
-[node name="Pump" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="0" unique_id=1569568267]
+[node name="Pump" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="0" unique_id=1965148298]
 transform = Transform3D(-0.056681458, -0.06502539, -0.99626863, -0.99239075, -0.10556647, 0.063350685, -0.109292306, 0.99228376, -0.058546696, -18.176582, -2.2463078, 47.5744)
 
-[node name="Shell" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="1" unique_id=302753519]
+[node name="Shell" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="1" unique_id=1335173628]
 transform = Transform3D(-0.056693345, -0.065025516, -0.9962678, -0.99238986, -0.10556657, 0.06336254, -0.109293096, 0.99228376, -0.0585455, -16.325777, 2.6813838, 13.320985)
 
-[node name="Body" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="2" unique_id=2027832929]
+[node name="Body" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature/Skeleton3D" index="2" unique_id=1683343029]
 transform = Transform3D(-0.05668536, -0.06502545, -0.9962683, -0.9923904, -0.1055665, 0.063354574, -0.109292544, 0.9922838, -0.058546312, -14.47986, 3.9211078, 4.877841)
 
-[node name="AnimationPlayer" parent="Head/Camera/WeaponHolder/SHOTGUN" index="5" unique_id=2043108966]
+[node name="AnimationPlayer" parent="Head/Camera/WeaponHolder/SHOTGUN" index="5" unique_id=1402284483]
 autoplay = &"idle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head" unique_id=976964842]
@@ -183,6 +184,7 @@ fall_state = NodePath("../Fall")
 crouch_state = NodePath(".")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1822624688]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=907013721]
 layout_mode = 3

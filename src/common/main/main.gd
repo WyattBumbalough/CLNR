@@ -44,7 +44,6 @@ func _deferred_load_level(new_level_uid: String):
 	if current_level:
 		transition_root.fade_out()
 		await transition_root.fade_out_finished
-		
 		current_level.queue_free()
 		current_level = null
 	else:

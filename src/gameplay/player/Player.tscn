@@ -63,6 +63,7 @@ collide_with_bodies = false
 
 [node name="SHOTGUN" parent="Head/Camera/WeaponHolder" unique_id=566108784 instance=ExtResource("2_vgqeu")]
 transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, 0, -0.39541936, -0.38154942)
+visible = false
 
 [node name="Skeleton3D" parent="Head/Camera/WeaponHolder/SHOTGUN/Armature" parent_id_path=PackedInt32Array(566108784, 980088631) index="0" unique_id=391958263]
 bones/1/position = Vector3(17.015226, -24.465796, 32.269753)

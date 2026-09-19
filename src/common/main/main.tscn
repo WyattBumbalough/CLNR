@@ -116,4 +116,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[connection signal="fade_in_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_in_finished"]
+[connection signal="fade_out_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_out_finished"]
 [connection signal="animation_finished" from="TransitionLayer/Transition/AnimationPlayer" to="TransitionLayer/Transition" method="_on_animation_player_animation_finished"]

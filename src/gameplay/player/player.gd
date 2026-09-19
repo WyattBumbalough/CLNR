@@ -41,23 +41,24 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.handle_input(event)
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and allow_look == true:
 		head.rotate_y( -event.relative.x * SENS )
 		camera.rotate_x( -event.relative.y * SENS )
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 	
-	if Input.is_action_just_released("interact"):
+	if Input.is_action_just_released("interact") and allow_interaction == true:
 		interact()
 
 
 func _physics_process(delta: float) -> void:
-	state_machine.handle_physics(delta)
-	
 	if allow_move:
+		state_machine.handle_physics(delta)
 		if Input.get_vector(MOVE_LEFT, MOVE_RIGHT, MOVE_FORWARD, MOVE_BACK):
 			input_direction = Input.get_vector(MOVE_LEFT, MOVE_RIGHT, MOVE_FORWARD, MOVE_BACK)
 		else:
 			input_direction = Vector2.ZERO
+	else:
+		velocity = Vector3.ZERO
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -73,6 +74,9 @@ func _physics_process(delta: float) -> void:
 func handle_movement(speed: float, acceleration: float, friction: float):
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if allow_look == false:
+		return
 	
 	if is_on_floor():
 		if direction:
@@ -105,10 +109,28 @@ func check_interactions():
 	
 		if interact_ray_result != null and interact_ray_result is InteractionArea:
 			interact_ray_result.emit_signal("looked_at")
-	
+
 
 func interact():
 	if allow_interaction == false:
 		return
 	if interact_ray_result != null and interact_ray_result is InteractionArea:
 		interact_ray_result.emit_signal("interacted")
+
+
+func disable_player():
+	allow_move = false
+	allow_look = false
+	allow_jump = false
+	allow_crouch = false
+	allow_sprint = false
+	allow_interaction = false
+
+
+func enable_player():
+	allow_move = true
+	allow_look = true
+	allow_jump = true
+	allow_crouch = true
+	allow_sprint = true
+	allow_interaction = true

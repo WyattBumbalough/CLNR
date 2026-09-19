@@ -9,7 +9,7 @@ var current_level : LevelBase
 # World3d root nodes.
 @onready var level_root     : Node3D = $World/Level
 @onready var enitities_root : Node3D = $World/Enitities
-@onready var transition_root: Control = $TransitionLayer/Transition
+@onready var transition     : Control = $TransitionLayer/Transition
 
 
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 	Refs.main = self
 	randomize()
 	init_player()
-	load_level("uid://b8awueo266pwo")
+	load_level("uid://b8awueo266pwo") # Loads Test Level 1 by default.
 
 
 func init_player():
@@ -42,12 +42,14 @@ func load_level(new_level_uid: String):
 
 func _deferred_load_level(new_level_uid: String):
 	if current_level:
-		transition_root.fade_out()
-		await transition_root.fade_out_finished
+		freeze_player()
+		transition.fade_out()
+		await transition.fade_out_finished
 		current_level.queue_free()
 		current_level = null
+		
 	else:
-		transition_root.fade_in()
+		transition.fade_in()
 	
 	await get_tree().process_frame
 	
@@ -57,8 +59,29 @@ func _deferred_load_level(new_level_uid: String):
 	else:
 		push_error("Could not load level %s as packed scene." %new_level_uid)
 	
+	player.enable_player()
+	
 	if is_instance_valid(current_level):
 		level_root.add_child(current_level)
 		current_level.setup_level(player)
-		transition_root.fade_in()
-	
+		transition.fade_in()
+
+
+func freeze_player():
+	if is_instance_valid(player):
+		player.allow_move = false
+
+func unfreeze_player():
+	if is_instance_valid(player):
+		player.allow_move = true
+
+
+#region signals
+
+func _on_transition_fade_out_finished() -> void:
+	unfreeze_player()
+
+
+
+
+#endregion

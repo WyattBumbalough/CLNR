@@ -21,11 +21,14 @@ func _ready() -> void:
 
 func _on_interacted_with():
 	pass
+	
 
 
 func _on__looked_at():
-	mesh.material_overlay = mat_overlay
+	if mesh:
+		mesh.material_overlay = mat_overlay
 
 
 func _on_looked_away():
-	mesh.material_overlay = null
+	if mesh:
+		mesh.material_overlay = null

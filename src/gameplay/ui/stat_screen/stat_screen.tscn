@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cyrqsjqaj5jsw"]
+
+[ext_resource type="Script" uid="uid://gm1c7loemkdk" path="res://src/gameplay/ui/stat_screen/stat_screen.gd" id="1_c6v2b"]
+
+[node name="StatScreen" type="Control" unique_id=1412430864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c6v2b")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=767057598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1713927043]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=397966694]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=909406107]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=881663305]
+layout_mode = 2
+text = "STATUS"
+horizontal_alignment = 1
+
+[node name="MaxHealth" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1327422106]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MaxHealth" unique_id=1612094155]
+layout_mode = 2
+text = "MAX HEALTH : "
+
+[node name="MaxHealthLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MaxHealth" unique_id=649355570]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "15"
+
+[node name="Defense" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=720618722]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Defense" unique_id=794938883]
+layout_mode = 2
+text = "DEFENSE : "
+
+[node name="DefenseLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Defense" unique_id=9587847]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "15"
+
+[node name="MoveSpeed" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1367171558]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MoveSpeed" unique_id=1811761633]
+layout_mode = 2
+text = "MOVE SPEED : "
+
+[node name="MoveSpeedLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MoveSpeed" unique_id=59021825]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "4.5"
+
+[node name="SprintAdd" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1457398757]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/SprintAdd" unique_id=1515065707]
+layout_mode = 2
+text = "SPRINT ADD : "
+
+[node name="SprintAddLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/SprintAdd" unique_id=122070206]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "2.5"

@@ -12,7 +12,6 @@ var current_level : LevelBase
 @onready var transition     : Control = $TransitionLayer/Transition
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Refs.main = self
@@ -70,6 +69,7 @@ func _deferred_load_level(new_level_uid: String):
 func freeze_player():
 	if is_instance_valid(player):
 		player.allow_move = false
+
 
 func unfreeze_player():
 	if is_instance_valid(player):

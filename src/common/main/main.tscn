@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck03kqy61d1m3" path="res://src/common/main/main.gd" id="1_bnsfs"]
 [ext_resource type="Script" uid="uid://di1oy42q8m4dq" path="res://src/common/main/transitions.gd" id="2_3xxxc"]
+[ext_resource type="PackedScene" uid="uid://cyrqsjqaj5jsw" path="res://src/gameplay/ui/stat_screen/stat_screen.tscn" id="2_x4vwa"]
 
 [sub_resource type="Animation" id="Animation_x4vwa"]
 length = 0.001
@@ -75,11 +76,17 @@ script = ExtResource("1_bnsfs")
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
 
-[node name="HUDRoot" type="Control" parent="HudLayer" unique_id=1546522877]
+[node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 instance=ExtResource("2_x4vwa")]
+layout_mode = 1
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=963244062]
 layer = 100
@@ -95,6 +102,7 @@ mouse_filter = 2
 script = ExtResource("2_3xxxc")
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer/Transition" unique_id=725855340]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

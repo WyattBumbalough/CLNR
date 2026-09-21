@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MissionData" format=3 uid="uid://cl3s2oddtdu7j"]
+
+[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/missions/mission_data.gd" id="1_bmiei"]
+
+[resource]
+script = ExtResource("1_bmiei")
+metadata/_custom_type_script = "uid://c40tlxftlpiwu"

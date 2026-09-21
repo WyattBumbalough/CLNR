@@ -36,6 +36,7 @@ albedo_color = Color(0.10224319, 0.10224321, 0.10224321, 1)
 font_size = 50
 
 [node name="Player" type="CharacterBody3D" unique_id=222571555]
+process_mode = 1
 script = ExtResource("1_2v7dq")
 stats = SubResource("Resource_2s24v")
 

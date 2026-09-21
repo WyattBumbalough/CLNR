@@ -10,6 +10,7 @@ var current_level : LevelBase
 @onready var level_root     : Node3D = $World/Level
 @onready var enitities_root : Node3D = $World/Enitities
 @onready var transition     : Control = $TransitionLayer/Transition
+@onready var stat_screen    : StatScreen = $HudLayer/HUD/StatScreen
 
 
 # Called when the node enters the scene tree for the first time.
@@ -64,6 +65,18 @@ func _deferred_load_level(new_level_uid: String):
 		level_root.add_child(current_level)
 		current_level.setup_level(player)
 		transition.fade_in()
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("open_stats"):
+		if get_tree().paused == false:
+			get_tree().paused = true
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			stat_screen.open()
+		else:
+			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			stat_screen.hide()
 
 
 func freeze_player():

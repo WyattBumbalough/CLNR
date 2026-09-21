@@ -73,9 +73,11 @@ func recalculate_stats() -> void:
 	# Set current level of each stat before buffs.
 	var curve_sample_pos: float = (float(level) / 100.0) - 0.01
 	current_max_health = base_max_health * STAT_CURVES[BuffableStats.MAX_HEALTH].sample(curve_sample_pos)
-	current_defense = base_max_health * STAT_CURVES[BuffableStats. DEFENSE].sample(curve_sample_pos)
-	current_move_speed = base_max_health * STAT_CURVES[BuffableStats.MOVE_SPEED].sample(curve_sample_pos)
-	current_sprint_add = base_max_health * STAT_CURVES[BuffableStats.SPRINT_ADD].sample(curve_sample_pos)
+	current_defense = base_defense * STAT_CURVES[BuffableStats. DEFENSE].sample(curve_sample_pos)
+	current_move_speed = base_move_speed * STAT_CURVES[BuffableStats.MOVE_SPEED].sample(curve_sample_pos)
+	current_sprint_add = base_sprint_add * STAT_CURVES[BuffableStats.SPRINT_ADD].sample(curve_sample_pos)
+	
+	print(current_max_health)
 	
 	for stat_name in stat_multipliers:
 		var cur_property_name : String = str("current_" + stat_name)

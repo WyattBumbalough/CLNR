@@ -59,6 +59,7 @@ _data = {
 }
 
 [node name="Main" type="Node" unique_id=701013822]
+process_mode = 3
 script = ExtResource("1_bnsfs")
 
 [node name="Systems" type="Node" parent="." unique_id=1946864719]
@@ -85,8 +86,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 instance=ExtResource("2_x4vwa")]
+[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
+process_mode = 2
 layout_mode = 1
+MAIN = NodePath("../../..")
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=963244062]
 layer = 100

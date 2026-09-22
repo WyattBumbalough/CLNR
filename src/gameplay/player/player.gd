@@ -5,7 +5,7 @@ class_name  Player
 const JUMP_VELOCITY = 4.5
 const SENS = .002
 
-@export var stats: Stats
+@export var stats: StatsResource
 
 @export_group("Controls mapping")
 @export var MOVE_FORWARD : String = "up"

@@ -35,12 +35,15 @@ script = ExtResource("1_k52uv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=467173935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_k52uv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1164274262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+cast_shadow = 0
 mesh = SubResource("SphereMesh_vgppc")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=206710855]
 transform = Transform3D(0.333, 0, 0, 0, -1.45558925e-08, 0.333, 0, -0.333, -1.45558925e-08, 0, 1.25, -0.75)
+cast_shadow = 0
 mesh = SubResource("PrismMesh_xxspu")

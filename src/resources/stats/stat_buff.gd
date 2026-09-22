@@ -6,7 +6,7 @@ enum BuffType{
 	ADD
 }
 
-@export var stat        : Stats.BuffableStats
+@export var stat        : StatsResource.BuffableStats
 @export var buff_amount : float
 @export var buff_type  : BuffType
 

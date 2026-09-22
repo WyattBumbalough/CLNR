@@ -1,4 +1,4 @@
-class_name Stats
+class_name StatsResource
 extends Resource
 
 signal health_depleted
@@ -11,23 +11,23 @@ enum BuffableStats{
 	SPRINT_ADD
 }
 
-const STAT_CURVES: Dictionary[BuffableStats, Curve] = {
-	BuffableStats.MAX_HEALTH   : preload("uid://d4nkcsp62nrwh"),
-	BuffableStats.DEFENSE      : preload("uid://ccjrujai2c270"),
-	BuffableStats.MOVE_SPEED   : preload("uid://6o38x4uyyg2o"),
-	BuffableStats.SPRINT_ADD : preload("uid://cn543yvuo75d0")
-}
+#const STAT_CURVES: Dictionary[BuffableStats, Curve] = {
+	#BuffableStats.MAX_HEALTH   : preload("uid://d4nkcsp62nrwh"),
+	#BuffableStats.DEFENSE      : preload("uid://ccjrujai2c270"),
+	#BuffableStats.MOVE_SPEED   : preload("uid://6o38x4uyyg2o"),
+	#BuffableStats.SPRINT_ADD : preload("uid://cn543yvuo75d0")
+#}
 
-const BASE_LEVEL_XP = 100.0 # Base amount of xp needed to fill a level.
+#const BASE_LEVEL_XP = 100.0 # Base amount of xp needed to fill a level.
 
 @export var base_max_health : float = 100
 @export var base_move_speed : float = 4.0
 @export var base_sprint_add : float = 2.5
 @export var base_defense    : float = 10
-@export var experience      : float = 0: set = _on_experience_set
+#@export var experience      : float = 0: set = _on_experience_set
 
-var level: float: 
-	get(): return floor(max(1.0, sqrt(experience / 100.0) + 0.5))
+#var level: float: 
+	#get(): return floor(max(1.0, sqrt(experience / 100.0) + 0.5))
 var current_max_health : float = 100
 var current_move_speed : float = 4.0
 var current_sprint_add : float = 2.5
@@ -71,13 +71,11 @@ func recalculate_stats() -> void:
 				stat_multipliers[stat_name] += buff.buff_amount
 	
 	# Set current level of each stat before buffs.
-	var curve_sample_pos: float = (float(level) / 100.0) - 0.01
-	current_max_health = base_max_health * STAT_CURVES[BuffableStats.MAX_HEALTH].sample(curve_sample_pos)
-	current_defense = base_defense * STAT_CURVES[BuffableStats. DEFENSE].sample(curve_sample_pos)
-	current_move_speed = base_move_speed * STAT_CURVES[BuffableStats.MOVE_SPEED].sample(curve_sample_pos)
-	current_sprint_add = base_sprint_add * STAT_CURVES[BuffableStats.SPRINT_ADD].sample(curve_sample_pos)
-	
-	print(current_max_health)
+	#var curve_sample_pos: float = (float(level) / 100.0) - 0.01
+	current_max_health = base_max_health #* STAT_CURVES[BuffableStats.MAX_HEALTH].sample(curve_sample_pos)
+	current_defense = base_defense #* STAT_CURVES[BuffableStats. DEFENSE].sample(curve_sample_pos)
+	current_move_speed = base_move_speed #* STAT_CURVES[BuffableStats.MOVE_SPEED].sample(curve_sample_pos)
+	current_sprint_add = base_sprint_add #* STAT_CURVES[BuffableStats.SPRINT_ADD].sample(curve_sample_pos)
 	
 	for stat_name in stat_multipliers:
 		var cur_property_name : String = str("current_" + stat_name)
@@ -93,9 +91,9 @@ func _on_health_set(new_value: float) -> void:
 	if health <= 0:
 		health_depleted.emit()
 
-func _on_experience_set(new_value: float) -> void:
-	var old_level: float = level
-	experience = new_value
-	if not old_level == new_value:
-		recalculate_stats()
+#func _on_experience_set(new_value: float) -> void:
+	#var old_level: float = level
+	#experience = new_value
+	#if not old_level == new_value:
+		#recalculate_stats()
 	

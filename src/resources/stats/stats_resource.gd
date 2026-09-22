@@ -11,30 +11,20 @@ enum BuffableStats{
 	SPRINT_ADD
 }
 
-#const STAT_CURVES: Dictionary[BuffableStats, Curve] = {
-	#BuffableStats.MAX_HEALTH   : preload("uid://d4nkcsp62nrwh"),
-	#BuffableStats.DEFENSE      : preload("uid://ccjrujai2c270"),
-	#BuffableStats.MOVE_SPEED   : preload("uid://6o38x4uyyg2o"),
-	#BuffableStats.SPRINT_ADD : preload("uid://cn543yvuo75d0")
-#}
-
-#const BASE_LEVEL_XP = 100.0 # Base amount of xp needed to fill a level.
 
 @export var base_max_health : float = 100
 @export var base_move_speed : float = 4.0
 @export var base_sprint_add : float = 2.5
 @export var base_defense    : float = 10
-#@export var experience      : float = 0: set = _on_experience_set
 
-#var level: float: 
-	#get(): return floor(max(1.0, sqrt(experience / 100.0) + 0.5))
+@export var stat_buffs : Array[StatBuff]
+
 var current_max_health : float = 100
 var current_move_speed : float = 4.0
 var current_sprint_add : float = 2.5
 var current_defense    : float = 10
 
 var health     : float = 0: set = _on_health_set
-var stat_buffs : Array[StatBuff]
 
 
 func _init() -> void:

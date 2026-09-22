@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c435fcwsjn58i" path="res://src/gameplay/player/States/player_state_machine.gd" id="2_7og37"]
 [ext_resource type="Script" uid="uid://b46w88fxtl46b" path="res://src/resources/stats/stats_resource.gd" id="2_21ga0"]
 [ext_resource type="PackedScene" uid="uid://y35tt6osmp5h" path="res://src/gameplay/weapons/shotgun/shotgun.tscn" id="2_vgqeu"]
+[ext_resource type="Script" uid="uid://ctxj3biubhky7" path="res://src/resources/stats/stat_buff.gd" id="3_2s24v"]
 [ext_resource type="Script" uid="uid://b7buwxinxyh7i" path="res://src/gameplay/player/States/player_idle.gd" id="3_oeplr"]
 [ext_resource type="Script" uid="uid://hl5i56hdi4uo" path="res://src/gameplay/player/States/player_walk.gd" id="4_r4xyb"]
 [ext_resource type="Script" uid="uid://xl8ijqm5sg7h" path="res://src/gameplay/player/States/player_run.gd" id="5_c7660"]

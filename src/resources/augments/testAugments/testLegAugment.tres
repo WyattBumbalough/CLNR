@@ -3,9 +3,24 @@
 [ext_resource type="Script" uid="uid://drb6d5jyyg48p" path="res://src/resources/augments/augment_resource.gd" id="1_y86lt"]
 [ext_resource type="Script" uid="uid://ctxj3biubhky7" path="res://src/resources/stats/stat_buff.gd" id="2_3ejyc"]
 
+[sub_resource type="Resource" id="Resource_y86lt"]
+script = ExtResource("2_3ejyc")
+stat = 2
+buff_amount = 0.25
+buff_type = 1
+metadata/_custom_type_script = "uid://ctxj3biubhky7"
+
+[sub_resource type="Resource" id="Resource_3ejyc"]
+script = ExtResource("2_3ejyc")
+stat = 3
+buff_amount = 0.25
+buff_type = 1
+metadata/_custom_type_script = "uid://ctxj3biubhky7"
+
 [resource]
 script = ExtResource("1_y86lt")
 name = "ELEBOT"
 description = "Electronic Leg Exoskeletal RoBOT. 
 A pseudo-anthropromorphic mechanical structure composed of titanium alloy surgically mounted to the femur and tibia, with an electronic valve controlled hyrdraulic actuator mounted near the patella. 7 Degrees of freedom increases the users walking and running speed with mimimal risk of injury, as well as greatly dampening the impact of falls."
+stat_buffs = Array[ExtResource("2_3ejyc")]([SubResource("Resource_y86lt"), SubResource("Resource_3ejyc")])
 metadata/_custom_type_script = "uid://drb6d5jyyg48p"

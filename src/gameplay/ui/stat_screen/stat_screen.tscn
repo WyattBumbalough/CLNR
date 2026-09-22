@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyrqsjqaj5jsw"]
 
 [ext_resource type="Script" uid="uid://gm1c7loemkdk" path="res://src/gameplay/ui/stat_screen/stat_screen.gd" id="1_c6v2b"]
+[ext_resource type="Resource" uid="uid://17iyvxhjctfd" path="res://src/resources/augments/testAugments/testLegAugment.tres" id="2_j3uu1"]
 
 [node name="StatScreen" type="Control" unique_id=1412430864]
 layout_mode = 3
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_c6v2b")
+leg_aug = ExtResource("2_j3uu1")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=767057598]
 layout_mode = 1
@@ -112,3 +114,5 @@ text = "Buy Health Augments"
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 text = "Buy Body Augments"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Leg" to="." method="_on_leg_pressed"]

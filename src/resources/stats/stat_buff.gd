@@ -11,13 +11,10 @@ enum BuffType{
 @export var buff_type  : BuffType
 
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# Called when a new statbuff is instantiated. I.E. you could call StatBuff.new() in another script.
+func _init(_stat: StatsResource.BuffableStats = StatsResource.BuffableStats.MAX_HEALTH,
+		_buff_amount: float = 1.0, _buff_type: BuffType = BuffType.ADD) -> void:
+		
+		stat = _stat
+		buff_amount = _buff_amount
+		buff_type = _buff_type

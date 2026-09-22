@@ -18,8 +18,13 @@ func _ready() -> void:
 
 func open():
 	var player_stats: StatsResource = MAIN.player.stats
-	max_health_label.text = str((int(ceil(player_stats.current_max_health))))
-	defense_label.text = str((int(ceil(player_stats.current_defense))))
-	move_speed_label.text = str((int(ceil(player_stats.current_move_speed))))
+	max_health_label.text = str(player_stats.current_max_health)
+	defense_label.text = str(player_stats.current_defense)
+	move_speed_label.text = str(player_stats.current_move_speed)
 	
 	show()
+
+func _on_leg_pressed() -> void:
+	for i in leg_aug.stat_buffs:
+		MAIN.player.stats.add_buff(i)
+	open()

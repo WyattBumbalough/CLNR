@@ -8,6 +8,8 @@ extends Node3D
 
 
 func _ready() -> void:
+	add_to_group("entities")
+	 
 	if mesh == null:
 		printerr("No mesh assigned to interactable object.")
 	elif interaction_area == null:

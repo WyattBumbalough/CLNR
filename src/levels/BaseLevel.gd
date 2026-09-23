@@ -4,6 +4,7 @@ extends Node3D
 @export var default_spawner : Spawner
 
 var PLAYER : Player
+var MAIN : Main
 
 
 func setup_level(_player: Player, random_spawn: bool = true):

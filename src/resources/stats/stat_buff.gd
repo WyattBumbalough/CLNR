@@ -3,7 +3,8 @@ extends Resource
 
 enum BuffType{
 	MULTIPLY,
-	ADD
+	ADD,
+	KILLYOURSELF
 }
 
 @export var stat        : StatsResource.BuffableStats
@@ -13,7 +14,7 @@ enum BuffType{
 
 # Called when a new statbuff is instantiated. I.E. you could call StatBuff.new() in another script.
 func _init(_stat: StatsResource.BuffableStats = StatsResource.BuffableStats.MAX_HEALTH,
-		_buff_amount: float = 1.0, _buff_type: BuffType = BuffType.ADD) -> void:
+		_buff_amount: float = 1.0, _buff_type: BuffType = BuffType.MULTIPLY) -> void:
 		
 		stat = _stat
 		buff_amount = _buff_amount

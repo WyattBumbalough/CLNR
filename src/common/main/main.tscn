@@ -62,17 +62,11 @@ _data = {
 process_mode = 3
 script = ExtResource("1_bnsfs")
 
-[node name="Systems" type="Node" parent="." unique_id=1946864719]
-
-[node name="InventoryManager" type="Node" parent="Systems" unique_id=1003806387]
-
-[node name="GameState" type="Node" parent="Systems" unique_id=1067266030]
-
 [node name="World" type="Node3D" parent="." unique_id=1000134336]
 
 [node name="Level" type="Node3D" parent="World" unique_id=244748315]
 
-[node name="Enitities" type="Node3D" parent="World" unique_id=305798940]
+[node name="Entities" type="Node3D" parent="World" unique_id=305798940]
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
@@ -86,10 +80,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
+[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN", "augment_manager") instance=ExtResource("2_x4vwa")]
 process_mode = 2
 layout_mode = 1
 MAIN = NodePath("../../..")
+augment_manager = NodePath("")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
+layer = 25
+
+[node name="UI" type="Control" parent="UILayer" unique_id=104465240]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=963244062]
 layer = 100

@@ -8,7 +8,7 @@ var current_level : LevelBase
  
 # World3d root nodes.
 @onready var level_root     : Node3D = $World/Level
-@onready var enitities_root : Node3D = $World/Enitities
+@onready var enitities_root : Node3D = $World/Entities
 @onready var transition     : Control = $TransitionLayer/Transition
 @onready var stat_screen    : StatScreen = $HudLayer/HUD/StatScreen
 
@@ -50,7 +50,6 @@ func _deferred_load_level(new_level_uid: String):
 		
 	else:
 		transition.fade_in()
-	
 	await get_tree().process_frame
 	
 	var new_level_packed : PackedScene = ResourceLoader.load(new_level_uid) as PackedScene
@@ -63,6 +62,7 @@ func _deferred_load_level(new_level_uid: String):
 	
 	if is_instance_valid(current_level):
 		level_root.add_child(current_level)
+		#current_level.MAIN = self
 		current_level.setup_level(player)
 		transition.fade_in()
 

@@ -2,6 +2,7 @@ class_name StatScreen
 extends Control
 
 @export var MAIN: Main
+#@export var augment_manager : AugmentManager
 @export var leg_aug : AugmentResource
 @export var health_aug : AugmentResource
 @export var body_aug : AugmentResource
@@ -25,6 +26,10 @@ func open():
 	show()
 
 func _on_leg_pressed() -> void:
-	for i in leg_aug.stat_buffs:
+	AugmentManager.install_augment(leg_aug)
+
+
+func _on_head_pressed() -> void:
+	for i in health_aug.stat_buffs:
 		MAIN.player.stats.add_buff(i)
 	open()

@@ -3,25 +3,34 @@ extends Node
 
 const PLAYER_UID : String = ("uid://cwjomq7poa3ul")
 
-var player        : Player
-var current_level : LevelBase
- 
+
+#@export_group("Mission Log")
+#@export var available_missions  : Array[MissionData]
+#@export var completed_missions : Array[MissionData]
+#@export var selected_mission   : MissionData
+
+
 # World3d root nodes.
 @onready var level_root     : Node3D = $World/Level
 @onready var enitities_root : Node3D = $World/Entities
+
+# UI Root nodes
 @onready var transition     : Control = $TransitionLayer/Transition
 @onready var stat_screen    : StatScreen = $HudLayer/HUD/StatScreen
+
+var player        : Player
+var current_level : LevelBase
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Refs.main = self
 	randomize()
-	init_player()
+	_init_player()
 	load_level("uid://b8awueo266pwo") # Loads Test Level 1 by default.
 
 
-func init_player():
+func _init_player() -> void:
 	var player_scene : PackedScene = ResourceLoader.load(PLAYER_UID) as PackedScene
 	
 	if is_instance_valid(player_scene):
@@ -36,7 +45,7 @@ func init_player():
 		return
 
 
-func load_level(new_level_uid: String):
+func load_level(new_level_uid: String) -> void:
 	_deferred_load_level.call_deferred(new_level_uid)
 
 
@@ -67,7 +76,7 @@ func _deferred_load_level(new_level_uid: String):
 		transition.fade_in()
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("open_stats"):
 		if get_tree().paused == false:
 			get_tree().paused = true
@@ -79,12 +88,11 @@ func _input(event: InputEvent) -> void:
 			stat_screen.hide()
 
 
-func freeze_player():
+func freeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = false
 
-
-func unfreeze_player():
+func unfreeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = true
 

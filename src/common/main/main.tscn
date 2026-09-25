@@ -80,11 +80,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN", "augment_manager") instance=ExtResource("2_x4vwa")]
+[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
 process_mode = 2
 layout_mode = 1
 MAIN = NodePath("../../..")
-augment_manager = NodePath("")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
 layer = 25

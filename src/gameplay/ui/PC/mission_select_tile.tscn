@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bknrw2snloic6"]
+
+[ext_resource type="Texture2D" uid="uid://b2dip2gour72u" path="res://assets/ss/testlvl1.png" id="1_ar2ir"]
+[ext_resource type="Script" uid="uid://jnaf02xookhe" path="res://src/gameplay/ui/PC/mission_select_tile.gd" id="1_vmc6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8us2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8us2"]
+content_margin_right = 5.0
+
+[sub_resource type="SystemFont" id="SystemFont_vmc6g"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ke7n6"]
+font = SubResource("SystemFont_vmc6g")
+font_size = 32
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmc6g"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke7n6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="LevelSelectTile" type="Control" unique_id=1456615034]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vmc6g")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1471218259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8us2")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1957158383]
+layout_mode = 2
+texture = ExtResource("1_ar2ir")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=326678196]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t8us2")
+text = "Apartment"
+label_settings = SubResource("LabelSettings_ke7n6")
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=666020755]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vmc6g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ke7n6")
+
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]

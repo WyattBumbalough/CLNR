@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://c0orhmg3eo2dr"]
+
+[ext_resource type="Script" uid="uid://c1bnowij5vlct" path="res://src/gameplay/ui/PC/mission_select_menu.gd" id="1_bgc34"]
+[ext_resource type="PackedScene" uid="uid://bknrw2snloic6" path="res://src/gameplay/ui/PC/mission_select_tile.tscn" id="1_wtj5n"]
+[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/missions/mission_data.gd" id="2_0opoa"]
+[ext_resource type="Resource" uid="uid://cl3s2oddtdu7j" path="res://src/resources/missions/mData_apartment.tres" id="3_fwqfo"]
+[ext_resource type="Resource" uid="uid://085hs6gdcw23" path="res://src/resources/missions/mData_testlevel.tres" id="4_11aip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwqfo"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_size = 1
+
+[node name="MissionSelectMenu" type="Control" unique_id=1518376709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgc34")
+default_missions = Array[ExtResource("2_0opoa")]([ExtResource("3_fwqfo"), ExtResource("4_11aip")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=206173672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=923735079]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer" unique_id=1667815556]
+custom_minimum_size = Vector2(430, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MissionList" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ScrollContainer" unique_id=1546368247]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LevelSelectTile" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1456615034 instance=ExtResource("1_wtj5n")]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1126145047]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1932012475]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1127428436]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Panel5" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1902758296]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Panel6" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1433947090]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="Panel7" type="Panel" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=369509713]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1637240904]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=267429216]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1088266918]
+custom_minimum_size = Vector2(500, 420)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fwqfo")
+
+[node name="MissionDescription" type="RichTextLabel" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel" unique_id=362435814]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+autowrap_mode = 2

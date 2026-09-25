@@ -18,7 +18,9 @@ config/icon="res://assets/textures/icon.svg"
 [autoload]
 
 Refs="*uid://dffd1lkvft1fx"
+Events="*uid://gsifj344bf5p"
 AugmentManager="*uid://clm6guu3c7v3u"
+MissionLog="*uid://brupmecsdsjuk"
 Screenshot="*uid://5p606g8rkd4v"
 
 [display]

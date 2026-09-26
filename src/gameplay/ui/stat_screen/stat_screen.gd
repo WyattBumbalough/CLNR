@@ -12,6 +12,7 @@ extends Control
 @onready var defense_label: Label = %DefenseLabel
 @onready var move_speed_label: Label = %MoveSpeedLabel
 
+@onready var margin_container: MarginContainer = $MarginContainer
 
 func _ready() -> void:
 	hide()

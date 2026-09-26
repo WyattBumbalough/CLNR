@@ -12,7 +12,7 @@ script = ExtResource("2_0opoa")
 level_uid = "uid://colu5rpsnq4vn"
 thumbnail = ExtResource("5_11aip")
 mission_title = "Sandbox"
-mission_description = "Just a nice place to good and/or fart around in."
+mission_description = "Just a nice place to goof and/or fart around in."
 metadata/_custom_type_script = "uid://c40tlxftlpiwu"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwqfo"]
@@ -61,7 +61,7 @@ size_flags_vertical = 3
 [node name="MissionList" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ScrollContainer" unique_id=1546368247]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 20
 
 [node name="LevelSelectTile" parent="MarginContainer/HBoxContainer/ScrollContainer/MissionList" unique_id=1456615034 instance=ExtResource("1_wtj5n")]
 layout_mode = 2
@@ -98,7 +98,7 @@ theme_override_constants/margin_left = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=267429216]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_constants/separation = 14
+theme_override_constants/separation = 25
 
 [node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1088266918]
 custom_minimum_size = Vector2(500, 420)
@@ -113,7 +113,10 @@ autowrap_mode = 2
 
 [node name="SelectButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1116438633]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
 disabled = true
 text = "Select Mission"
 

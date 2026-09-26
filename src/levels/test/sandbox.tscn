@@ -18,7 +18,13 @@ sky_material = SubResource("ProceduralSkyMaterial_r03ke")
 background_mode = 2
 sky = SubResource("Sky_qgolt")
 tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.09
+fog_sky_affect = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn7ya"]
 albedo_texture = ExtResource("3_7hhpy")
@@ -152,6 +158,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.125, 7)
 size = Vector3(1, 6.25, 16)
 material = SubResource("StandardMaterial3D_qf7ps")
 
+[node name="CSGBox3D8" type="CSGBox3D" parent="Visuals/CSG" unique_id=1055290326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.375, 5.75, 7)
+size = Vector3(5.25, 1, 16)
+material = SubResource("StandardMaterial3D_qf7ps")
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="Visuals/CSG" unique_id=566292239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.125, 15.5)
 size = Vector3(16, 6.25, 1)
@@ -206,3 +217,17 @@ material = SubResource("StandardMaterial3D_mtg87")
 
 [node name="Spawner" parent="." unique_id=514326950 instance=ExtResource("6_otc3b")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 13)
+
+[node name="Lights" type="Node3D" parent="." unique_id=185723042]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1446661287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, 3.75)
+omni_range = 5.437
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=980485170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, 11.5)
+omni_range = 5.437
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1136681976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, 7.25)
+omni_range = 5.437

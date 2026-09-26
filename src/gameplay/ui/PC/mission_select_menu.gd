@@ -40,11 +40,15 @@ func update_mission_list():
 
 
 func _on_mission_tile_pressed(_mission: MissionData):
+	if MissionLog.selected_mission != _mission:
+		select_button.disabled = false
+	else:
+		select_button.disabled = true
 	selected_mission = _mission
-	select_button.disabled = false
 	mission_description.text = _mission.mission_description
 
 
 func _on_select_button_pressed() -> void:
 	if selected_mission != null:
+		select_button.disabled = true
 		MissionLog.selected_mission = selected_mission

@@ -1,6 +1,8 @@
 class_name Interactable
 extends Node3D
 
+signal interacted
+
 @export var interaction_area : InteractionArea
 @export var mesh : MeshInstance3D
 
@@ -21,8 +23,8 @@ func _ready() -> void:
 	interaction_area.looked_away.connect(_on_looked_away)
 
 
-func _on_interacted_with():
-	pass
+func _on_interacted_with()-> void:
+	interacted.emit()
 	
 
 

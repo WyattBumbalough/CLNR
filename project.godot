@@ -13,7 +13,7 @@ config_version=5
 config/name="Cleaner"
 run/main_scene="uid://otgdbccdq58h"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://assets/textures/icon.svg"
+config/icon="res://assets/textures/icons/icon.svg"
 
 [autoload]
 

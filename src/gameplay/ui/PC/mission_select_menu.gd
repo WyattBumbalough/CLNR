@@ -4,9 +4,11 @@ extends Control
 
 @onready var mission_list: VBoxContainer = %MissionList
 @onready var mission_description: RichTextLabel = %MissionDescription
+@onready var select_button: Button = %SelectButton
+
 
 var mission_tile : PackedScene = preload("res://src/gameplay/ui/PC/mission_select_tile.tscn")
-
+var selected_mission : MissionData
 
 func _ready() -> void:
 	setup.call_deferred()
@@ -14,7 +16,8 @@ func _ready() -> void:
 
 func setup():
 	for m in default_missions:
-		MissionLog.available_missions.append(m)
+		if not MissionLog.available_missions.has(m):
+			MissionLog.available_missions.append(m)
 	await get_tree().process_frame
 	update_mission_list()
 
@@ -36,5 +39,12 @@ func update_mission_list():
 		tile.setup(m)
 
 
-func _on_mission_tile_pressed(mission: MissionData):
-	mission_description.text = mission.mission_description
+func _on_mission_tile_pressed(_mission: MissionData):
+	selected_mission = _mission
+	select_button.disabled = false
+	mission_description.text = _mission.mission_description
+
+
+func _on_select_button_pressed() -> void:
+	if selected_mission != null:
+		MissionLog.selected_mission = selected_mission

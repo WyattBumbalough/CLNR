@@ -2,13 +2,7 @@ class_name Main
 extends Node
 
 const PLAYER_UID : String = ("uid://cwjomq7poa3ul")
-
-
-#@export_group("Mission Log")
-#@export var available_missions  : Array[MissionData]
-#@export var completed_missions : Array[MissionData]
-#@export var selected_mission   : MissionData
-
+const PC_UID     : String = ("uid://bbseperv0qus3")
 
 # World3d root nodes.
 @onready var level_root     : Node3D = $World/Level
@@ -16,6 +10,7 @@ const PLAYER_UID : String = ("uid://cwjomq7poa3ul")
 
 # UI Root nodes
 @onready var transition     : Control = $TransitionLayer/Transition
+@onready var ui: Control = %UI
 @onready var stat_screen    : StatScreen = $HudLayer/HUD/StatScreen
 
 var player        : Player
@@ -27,6 +22,8 @@ func _ready() -> void:
 	Refs.main = self
 	randomize()
 	_init_player()
+	Events.computer_opened.connect(open_computer)
+	Events.computer_closed.connect(func(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED)
 	load_level("uid://b8awueo266pwo") # Loads Test Level 1 by default.
 
 
@@ -86,6 +83,15 @@ func _input(_event: InputEvent) -> void:
 			get_tree().paused = false
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			stat_screen.hide()
+
+
+func open_computer():
+	var pc_packed : PackedScene = ResourceLoader.load(PC_UID) as PackedScene
+	var pc
+	if is_instance_valid(pc_packed):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		pc = pc_packed.instantiate()
+		ui.add_child(pc)
 
 
 func freeze_player() -> void:

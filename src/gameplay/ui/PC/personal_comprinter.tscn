@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0orhmg3eo2dr" path="res://src/gameplay/ui/PC/mission_select_menu.tscn" id="1_bdaph"]
 [ext_resource type="Script" uid="uid://ca4qvxk8r61wn" path="res://src/gameplay/ui/PC/personal_comprinter.gd" id="1_cutn6"]
 [ext_resource type="AudioStream" uid="uid://bxvwieonksath" path="res://assets/ss/nothing.mp3" id="3_bxmtm"]
+[ext_resource type="Texture2D" uid="uid://cdjndvbn34jk7" path="res://assets/textures/icons/Asset 76@0.5x.png" id="4_bxmtm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1og4"]
 content_margin_left = 0.0
@@ -65,4 +66,23 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer" unique_id=1660707647]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CloseButton" type="Button" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer" unique_id=638136035]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+icon = ExtResource("4_bxmtm")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="tab_selected" from="MarginContainer/CenterContainer/PanelContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/PanelContainer/MarginContainer/CloseButton" to="." method="_on_close_button_pressed"]

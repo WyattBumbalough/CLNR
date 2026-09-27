@@ -11,12 +11,13 @@ signal interacted
 
 func _ready() -> void:
 	add_to_group("entities")
-	 
 	if mesh == null:
-		printerr("No mesh assigned to interactable object.")
+		printerr("No mesh assigned to interactable object: %s" %name)
+		return
 	elif interaction_area == null:
-		printerr("No interaction area assigned to interactable object.")
-		
+		printerr("No interaction area assigned to interactable object: %s" %name)
+		return
+	
 	mesh.material_overlay = null
 	interaction_area.interacted.connect(_on_interacted_with)
 	interaction_area.looked_at.connect(_on__looked_at)

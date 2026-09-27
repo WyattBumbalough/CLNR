@@ -15,5 +15,8 @@ func handle_physics(_delta) -> State:
 	return null
 
 
+func handle_process(_delta) -> State:
+	return null
+
 func handle_input(_event: InputEvent) -> State:
 	return null

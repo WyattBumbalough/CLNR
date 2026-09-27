@@ -13,7 +13,7 @@ stencil_color = Color(1, 1, 1, 1)
 albedo_color = Color(0, 0.68124986, 1, 1)
 metallic_specular = 0.0
 emission_enabled = true
-emission = Color(0, 0.47125006, 0.690625, 1)
+emission = Color(0, 0.47058824, 0.6901961, 1)
 emission_energy_multiplier = 6.17
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jyn3s"]

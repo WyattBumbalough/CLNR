@@ -1,5 +1,8 @@
 extends PlayerState
 
+@export var footstep_delay: float = 1.5
+var time : float = 0.0
+
 
 func handle_physics(_delta) -> State:
 	PLAYER.handle_movement(speed, accel, friction)
@@ -9,6 +12,15 @@ func handle_physics(_delta) -> State:
 			return run_state
 	elif PLAYER.input_direction == Vector2.ZERO:
 		return idle_state
+	
+	return null
+
+
+func handle_process(_delta) -> State:
+	if time >= footstep_delay:
+		$"../../AudioStreamPlayer3D".play()
+		time = 0.0
+	time += _delta
 	
 	return null
 

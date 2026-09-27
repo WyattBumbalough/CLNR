@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bknrw2snloic6"]
 
 [ext_resource type="Texture2D" uid="uid://b2dip2gour72u" path="res://assets/ss/testlvl1.png" id="1_ar2ir"]
-[ext_resource type="Script" uid="uid://jnaf02xookhe" path="res://src/gameplay/ui/PC/mission_select_tile.gd" id="1_vmc6g"]
+[ext_resource type="Script" uid="uid://jnaf02xookhe" path="res://src/ui/PC/mission select/mission_select_tile.gd" id="1_vmc6g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8us2"]
 content_margin_left = 8.0

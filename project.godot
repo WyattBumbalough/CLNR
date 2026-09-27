@@ -15,6 +15,10 @@ run/main_scene="uid://otgdbccdq58h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/textures/icons/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b7w0r2djbbdoi"
+
 [autoload]
 
 Refs="*uid://dffd1lkvft1fx"
@@ -27,6 +31,16 @@ Screenshot="*uid://5p606g8rkd4v"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_3d_cursor/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://src/ui/": "green"
+}
 
 [input]
 

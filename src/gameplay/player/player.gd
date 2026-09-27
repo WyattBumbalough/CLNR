@@ -52,6 +52,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 
+func _process(delta: float) -> void:
+	state_machine.handle_process(delta)
+
+
 func _physics_process(delta: float) -> void:
 	if allow_move:
 		state_machine.handle_physics(delta)

@@ -3,6 +3,7 @@ extends Node
 
 @export var installed_augs : Array[AugmentResource]
 
+
 func install_augment(aug: AugmentResource) -> void:
 	if installed_augs.has(aug):
 		print("You already have this one, dipshit.")

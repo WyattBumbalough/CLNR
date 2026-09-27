@@ -1,6 +1,8 @@
 extends Node
 class_name StateMachine
 
+signal state_changed(state: State)
+
 @export var starting_state : State
 var current_state : State
 var previous_state : State
@@ -18,10 +20,17 @@ func change_state(new_state: State):
 	previous_state = current_state
 	current_state = new_state
 	current_state.enter(previous_state)
-
+	
+	state_changed.emit(new_state)
 
 func handle_physics(delta):
 	var new_state = current_state.handle_physics(delta)
+	if new_state != null:
+		change_state(new_state)
+
+
+func handle_process(delta):
+	var new_state = current_state.handle_process(delta)
 	if new_state != null:
 		change_state(new_state)
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbseperv0qus3"]
 
-[ext_resource type="PackedScene" uid="uid://c0orhmg3eo2dr" path="res://src/gameplay/ui/PC/mission_select_menu.tscn" id="1_bdaph"]
-[ext_resource type="Script" uid="uid://ca4qvxk8r61wn" path="res://src/gameplay/ui/PC/personal_comprinter.gd" id="1_cutn6"]
+[ext_resource type="PackedScene" uid="uid://c0orhmg3eo2dr" path="res://src/ui/PC/mission select/mission_select_menu.tscn" id="1_bdaph"]
+[ext_resource type="Script" uid="uid://ca4qvxk8r61wn" path="res://src/ui/PC/personal_comprinter.gd" id="1_cutn6"]
 [ext_resource type="AudioStream" uid="uid://bxvwieonksath" path="res://assets/ss/nothing.mp3" id="3_bxmtm"]
 [ext_resource type="Texture2D" uid="uid://cdjndvbn34jk7" path="res://assets/textures/icons/Asset 76@0.5x.png" id="4_bxmtm"]
 

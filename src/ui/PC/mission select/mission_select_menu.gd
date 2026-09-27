@@ -7,7 +7,7 @@ extends Control
 @onready var select_button: Button = %SelectButton
 
 
-var mission_tile : PackedScene = preload("res://src/gameplay/ui/PC/mission_select_tile.tscn")
+var mission_tile : PackedScene = preload("res://src/ui/PC/mission select/mission_select_tile.tscn")
 var selected_mission : MissionData
 
 func _ready() -> void:

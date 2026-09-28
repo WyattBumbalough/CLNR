@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://dw88882tdf7oh"]
 
 [ext_resource type="Script" uid="uid://ctl5glvbbrcmy" path="res://src/gameplay/interactables/radio.gd" id="1_2ntfu"]
-[ext_resource type="AudioStream" uid="uid://odvb321hssxe" path="res://assets/sfx/music/StoneOcean_SpaceHaze.mp3" id="1_fjuud"]
 [ext_resource type="AudioStream" uid="uid://cm4nydogb2bil" path="res://assets/sfx/music/StoneOcean_Rainboots_LQ.mp3" id="2_mmeyo"]
 [ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/gameplay/interactables/interactable.gd" id="3_uf6mw"]
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_2ntfu"]
+[ext_resource type="AudioStream" uid="uid://v44lntwhwgf" path="res://assets/sfx/music/Baggage Room.mp3" id="4_jt6vc"]
+[ext_resource type="AudioStream" uid="uid://t3snuyxhtywq" path="res://assets/sfx/music/The Deli - 5_32PM.mp3" id="4_y7hfb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26412"]
 albedo_color = Color(0.403125, 0.29672956, 0.263291, 1)
@@ -47,9 +48,10 @@ _surfaces = [{
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fjuud"]
 shuffle = true
-stream_count = 2
+stream_count = 3
 stream_0 = ExtResource("2_mmeyo")
-stream_1 = ExtResource("1_fjuud")
+stream_1 = ExtResource("4_y7hfb")
+stream_2 = ExtResource("4_jt6vc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf6mw"]
 albedo_color = Color(0.42284176, 0.42284176, 0.47812498, 1)
@@ -96,7 +98,7 @@ _surfaces = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7hfb"]
-size = Vector3(0.13574219, 0.12402344, 0.13354492)
+size = Vector3(0.21582031, 0.19165039, 0.13354492)
 
 [node name="Radio" type="Node3D" unique_id=52114207]
 script = ExtResource("1_2ntfu")
@@ -144,6 +146,7 @@ mesh = SubResource("ArrayMesh_fjuud")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 stream = SubResource("AudioStreamPlaylist_fjuud")
+unit_size = 5.5
 autoplay = true
 bus = &"Radio"
 

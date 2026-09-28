@@ -8,7 +8,7 @@ extends Control
 
 
 var mission_tile : PackedScene = preload("res://src/ui/PC/mission select/mission_select_tile.tscn")
-var selected_mission : MissionData
+var _selected_mission : MissionData
 
 func _ready() -> void:
 	setup.call_deferred()
@@ -44,11 +44,11 @@ func _on_mission_tile_pressed(_mission: MissionData):
 		select_button.disabled = false
 	else:
 		select_button.disabled = true
-	selected_mission = _mission
+	_selected_mission = _mission
 	mission_description.text = _mission.mission_description
 
 
 func _on_select_button_pressed() -> void:
-	if selected_mission != null:
+	if _selected_mission != null:
 		select_button.disabled = true
-		MissionLog.selected_mission = selected_mission
+		MissionLog.select_mission(_selected_mission)

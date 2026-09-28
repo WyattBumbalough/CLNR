@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://v44lntwhwgf"
+path="res://.godot/imported/Baggage Room.mp3-9327722b32a8b6a8d9b899cd6f281bf2.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/music/Baggage Room.mp3"
+dest_files=["res://.godot/imported/Baggage Room.mp3-9327722b32a8b6a8d9b899cd6f281bf2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

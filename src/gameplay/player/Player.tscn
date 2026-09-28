@@ -141,6 +141,7 @@ crouch_state = NodePath("../Crouch")
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1489990895 node_paths=PackedStringArray("idle_state", "walk_state", "run_state", "jump_state", "fall_state", "crouch_state")]
 script = ExtResource("5_c7660")
+footstep_delay = 0.375
 speed = 8.0
 friction = 0.1
 idle_state = NodePath("../Idle")

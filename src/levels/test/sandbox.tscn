@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjbcwhpn5xde" path="res://addons/kenney_prototype_textures/green/texture_10.png" id="4_kynyw"]
 [ext_resource type="Texture2D" uid="uid://3wvfvgpx5qy4" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="5_51wup"]
 [ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="6_otc3b"]
+[ext_resource type="PackedScene" uid="uid://cwjomq7poa3ul" path="res://src/gameplay/player/Player.tscn" id="9_51wup"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r03ke"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -283,6 +284,7 @@ material = SubResource("StandardMaterial3D_mtg87")
 
 [node name="Spawner" parent="." unique_id=514326950 instance=ExtResource("6_otc3b")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 13)
+scene_to_spawn = ExtResource("9_51wup")
 
 [node name="Lights" type="Node3D" parent="." unique_id=185723042]
 
@@ -301,5 +303,8 @@ omni_range = 5.437
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1136681976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, 7.25)
 omni_range = 5.437
+
+[node name="Player" parent="." unique_id=222571555 instance=ExtResource("9_51wup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, 16.75)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

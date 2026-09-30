@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_2ntfu"]
 [ext_resource type="AudioStream" uid="uid://v44lntwhwgf" path="res://assets/sfx/music/Baggage Room.mp3" id="4_jt6vc"]
 [ext_resource type="AudioStream" uid="uid://t3snuyxhtywq" path="res://assets/sfx/music/The Deli - 5_32PM.mp3" id="4_y7hfb"]
+[ext_resource type="AudioStream" uid="uid://b7305isbbibv1" path="res://assets/sfx/music/ORR-@bëën_ladën.mp3" id="5_jt6vc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26412"]
 albedo_color = Color(0.403125, 0.29672956, 0.263291, 1)
@@ -48,10 +49,11 @@ _surfaces = [{
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fjuud"]
 shuffle = true
-stream_count = 3
+stream_count = 4
 stream_0 = ExtResource("2_mmeyo")
 stream_1 = ExtResource("4_y7hfb")
 stream_2 = ExtResource("4_jt6vc")
+stream_3 = ExtResource("5_jt6vc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf6mw"]
 albedo_color = Color(0.42284176, 0.42284176, 0.47812498, 1)
@@ -146,7 +148,7 @@ mesh = SubResource("ArrayMesh_fjuud")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 stream = SubResource("AudioStreamPlaylist_fjuud")
-unit_size = 5.5
+unit_size = 5.0
 autoplay = true
 bus = &"Radio"
 

@@ -1,10 +1,10 @@
 extends Node3D
 
-@export var open_sound  : AudioStream
-@export var close_sound : AudioStream
+@export var open_sound: AudioStream
+@export var close_sound: AudioStream
 
-@onready var anims      : AnimationPlayer = $AnimationPlayer
-@onready var audio      : AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var anims: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 
 

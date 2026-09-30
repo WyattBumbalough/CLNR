@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://di1oy42q8m4dq" path="res://src/common/main/transitions.gd" id="2_3xxxc"]
 [ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="2_i71h3"]
 [ext_resource type="PackedScene" uid="uid://cyrqsjqaj5jsw" path="res://src/ui/stat_screen/stat_screen.tscn" id="2_x4vwa"]
+[ext_resource type="Shader" uid="uid://co3vunuc4auov" path="res://assets/shaders/screenDistortion.gdshader" id="5_i71h3"]
 
 [sub_resource type="Gradient" id="Gradient_amj6u"]
 colors = PackedColorArray(0, 0, 0, 0.2784314, 0, 0, 0, 0)
@@ -14,6 +15,115 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_amj6u"]
 font_size = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ulfwm"]
+shader = ExtResource("5_i71h3")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.010000000475
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="Animation" id="Animation_ulfwm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/warp_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/grille_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/aberration")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.7499999933364734e-08]
+}
+
+[sub_resource type="Animation" id="Animation_26tuk"]
+resource_name = "new_animation"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/warp_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, 2.158000102505]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/grille_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, 0.10000000475]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/aberration")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.7499999933364734e-08, 0.01000004797499998]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8he6"]
+_data = {
+&"RESET": SubResource("Animation_ulfwm"),
+&"open_hud": SubResource("Animation_26tuk")
+}
 
 [sub_resource type="Animation" id="Animation_x4vwa"]
 length = 0.001
@@ -27,7 +137,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_amj6u"]
@@ -83,6 +193,7 @@ script = ExtResource("1_bnsfs")
 layer = 10
 
 [node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,6 +252,21 @@ label_settings = SubResource("LabelSettings_amj6u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="HudLayer/HUD" unique_id=1342208981]
+material = SubResource("ShaderMaterial_ulfwm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HudAnims" type="AnimationPlayer" parent="HudLayer/HUD" unique_id=1198029735]
+libraries/ = SubResource("AnimationLibrary_r8he6")
+
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
 layer = 25
 
@@ -175,7 +301,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer/Transition" unique_id=1364497207]
 libraries/ = SubResource("AnimationLibrary_ulfwm")
@@ -185,9 +311,12 @@ layer = 128
 
 [node name="Debug" type="Control" parent="DebugLayer" unique_id=930590264]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="fade_in_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_in_finished"]
 [connection signal="fade_out_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_out_finished"]

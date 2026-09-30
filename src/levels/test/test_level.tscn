@@ -20,11 +20,17 @@ sky_material = SubResource("ProceduralSkyMaterial_8hofm")
 [sub_resource type="Environment" id="Environment_ytfmf"]
 background_mode = 2
 sky = SubResource("Sky_dw1xv")
+ambient_light_sky_contribution = 0.0
 ssao_enabled = true
 ssao_radius = 3.0
 ssao_intensity = 3.03
 glow_enabled = true
 glow_bloom = 0.05
+fog_enabled = true
+fog_light_color = Color(0.23124999, 0.23124999, 0.23124999, 1)
+fog_light_energy = 0.41
+volumetric_fog_density = 0.01
+volumetric_fog_emission_energy = 0.0
 adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptx7b"]

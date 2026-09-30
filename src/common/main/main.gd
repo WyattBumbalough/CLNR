@@ -11,9 +11,10 @@ const PC_UID     : String = ("uid://bbseperv0qus3")
 # UI Root nodes
 @onready var transition     : Control = $TransitionLayer/Transition
 @onready var ui: Control = %UI
+@onready var hud: HUD = %HUD
 @onready var stat_screen    : StatScreen = $HudLayer/HUD/StatScreen
 
-var player        : Player
+var player        : Player # Ref is connected during the init_player call in Main.
 var current_level : LevelBase
 
 
@@ -21,9 +22,12 @@ var current_level : LevelBase
 func _ready() -> void:
 	Refs.main = self
 	randomize()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_init_player()
+	
 	Events.computer_opened.connect(open_computer)
 	Events.computer_closed.connect(func(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED)
+	
 	load_level("uid://b8awueo266pwo") # Loads Test Level 1 by default.
 
 
@@ -32,6 +36,7 @@ func _init_player() -> void:
 	
 	if is_instance_valid(player_scene):
 		player = player_scene.instantiate()
+		player.hud = hud
 	else: 
 		push_error("Could not load player scene: " + PLAYER_UID)
 	
@@ -64,7 +69,7 @@ func _deferred_load_level(new_level_uid: String):
 	else:
 		push_error("Could not load level %s as packed scene." %new_level_uid)
 	
-	player.enable_player()
+	#player.enable_player()
 	
 	if is_instance_valid(current_level):
 		level_root.add_child(current_level)
@@ -75,14 +80,17 @@ func _deferred_load_level(new_level_uid: String):
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("open_stats"):
-		if get_tree().paused == false:
-			get_tree().paused = true
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			stat_screen.open()
-		else:
-			get_tree().paused = false
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			stat_screen.hide()
+		hud.toggle_hud()
+	
+	#if Input.is_action_just_pressed("open_stats"):
+		#if get_tree().paused == false:
+			#get_tree().paused = true
+			#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			#stat_screen.open()
+		#else:
+			#get_tree().paused = false
+			#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			#stat_screen.hide()
 
 
 func open_computer():
@@ -97,10 +105,12 @@ func open_computer():
 func freeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = false
+		player.allow_look = false
 
 func unfreeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = true
+		player.allow_look = true
 
 
 #region signals

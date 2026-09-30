@@ -35,7 +35,6 @@ radius = 0.235
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2v7dq"]
 dof_blur_far_enabled = true
-dof_blur_far_distance = 1500.0
 dof_blur_amount = 0.03
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ga0"]
@@ -54,6 +53,70 @@ streams_count = 3
 stream_0/stream = ExtResource("11_o6jv2")
 stream_1/stream = ExtResource("12_ypdxs")
 stream_2/stream = ExtResource("13_xxijo")
+
+[sub_resource type="Animation" id="Animation_o6jv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera:attributes:dof_blur_far_distance")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+
+[sub_resource type="Animation" id="Animation_ypdxs"]
+resource_name = "hud_open"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(-2, 2),
+"update": 0,
+"values": [75.0, 85.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera:attributes:dof_blur_far_distance")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(-2, 2),
+"update": 0,
+"values": [10.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxijo"]
+_data = {
+&"RESET": SubResource("Animation_o6jv2"),
+&"hud_open": SubResource("Animation_ypdxs")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulph6"]
 
 [node name="Player" type="CharacterBody3D" unique_id=222571555]
 process_mode = 1
@@ -129,9 +192,10 @@ crouch_state = NodePath("../Crouch")
 
 [node name="Walk" type="Node" parent="StateMachine" unique_id=89879183 node_paths=PackedStringArray("idle_state", "walk_state", "run_state", "jump_state", "fall_state", "crouch_state")]
 script = ExtResource("4_r4xyb")
-footstep_delay = 0.6
+footstep_delay = 0.45
 speed = 4.25
 accel = 0.125
+friction = 0.05
 idle_state = NodePath("../Idle")
 walk_state = NodePath(".")
 run_state = NodePath("../Run")
@@ -141,7 +205,7 @@ crouch_state = NodePath("../Crouch")
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1489990895 node_paths=PackedStringArray("idle_state", "walk_state", "run_state", "jump_state", "fall_state", "crouch_state")]
 script = ExtResource("5_c7660")
-footstep_delay = 0.375
+footstep_delay = 0.3
 speed = 8.0
 friction = 0.1
 idle_state = NodePath("../Idle")
@@ -213,3 +277,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 stream = SubResource("AudioStreamRandomizer_ulph6")
 max_polyphony = 2
 bus = &"Footsteps"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1310358581]
+libraries/ = SubResource("AnimationLibrary_xxijo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1198242318]
+transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, 2, 1.5, -4)
+visible = false
+mesh = SubResource("BoxMesh_ulph6")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1458177257]
+transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, -6.5, 1.5, -8)
+visible = false
+mesh = SubResource("BoxMesh_ulph6")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1327324545]
+transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, -2, 1.5, -11)
+visible = false
+mesh = SubResource("BoxMesh_ulph6")

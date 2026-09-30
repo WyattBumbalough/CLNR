@@ -31,15 +31,22 @@ const SENS = .002
 @onready var state_machine: StateMachine = %StateMachine
 @onready var interaction_raycast: RayCast3D = %InteractionRaycast
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+var hud : HUD
+
 var input_direction : Vector2
 var interact_ray_result
 
 
 func _ready() -> void:
+	Refs.player = self
 	state_machine.initialize(self)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	align_camera()
-
+	
+	hud.hud_opened.connect(_on_hud_opened)
+	hud.hud_closed.connect(_on_hud_closed)
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.handle_input(event)
@@ -97,12 +104,12 @@ func handle_movement(speed: float, acceleration: float, friction: float):
 			velocity.z = lerp(velocity.z, direction.z * speed, acceleration)
 
 
-func align_camera():
+func align_camera() -> void:
 	head.rotation.y = rotation.y
 	rotation.y = 0.0
 
 
-func check_interactions():
+func check_interactions() -> void:
 	if not interaction_raycast.is_colliding():
 		if interact_ray_result != null and interact_ray_result is InteractionArea:
 			interact_ray_result.emit_signal("looked_away")
@@ -117,14 +124,20 @@ func check_interactions():
 			interact_ray_result.emit_signal("looked_at")
 
 
-func interact():
+func interact() -> void:
 	if allow_interaction == false:
 		return
 	if interact_ray_result != null and interact_ray_result is InteractionArea:
 		interact_ray_result.emit_signal("interacted")
 
 
-func disable_player():
+func _on_hud_opened() -> void:
+	animation_player.play("hud_open")
+
+func _on_hud_closed() -> void:
+	animation_player.play_backwards("hud_open")
+
+#func disable_player():
 	allow_move = false
 	allow_look = false
 	allow_jump = false
@@ -132,8 +145,7 @@ func disable_player():
 	allow_sprint = false
 	allow_interaction = false
 
-
-func enable_player():
+#func enable_player():
 	allow_move = true
 	allow_look = true
 	allow_jump = true

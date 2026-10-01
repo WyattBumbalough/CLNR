@@ -1,5 +1,6 @@
-extends Node
-class_name StateMachine
+@icon("res://addons/at-icons/node/list_unordered.svg")
+class_name StateMachine extends Node
+
 
 signal state_changed(state: State)
 

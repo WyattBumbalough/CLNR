@@ -34,7 +34,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_3d_cursor/plugin.cfg")
+enabled=PackedStringArray("res://addons/at-icons/plugin.cfg", "res://addons/godot_3d_cursor/plugin.cfg")
 
 [file_customization]
 

@@ -204,7 +204,6 @@ mouse_filter = 1
 script = ExtResource("2_i71h3")
 
 [node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
-process_mode = 2
 layout_mode = 1
 scale = Vector2(1.58, 1.58)
 MAIN = NodePath("../../..")

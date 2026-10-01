@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ctxj3biubhky7" path="res://src/resources/stats/stat_buff.gd" id="3_2s24v"]
 [ext_resource type="Script" uid="uid://b7buwxinxyh7i" path="res://src/gameplay/player/States/player_idle.gd" id="3_oeplr"]
 [ext_resource type="Script" uid="uid://hl5i56hdi4uo" path="res://src/gameplay/player/States/player_walk.gd" id="4_r4xyb"]
+[ext_resource type="Script" uid="uid://udmxmool0ugb" path="res://src/common/weapon manager/weapon_manager.gd" id="4_ypdxs"]
 [ext_resource type="Script" uid="uid://xl8ijqm5sg7h" path="res://src/gameplay/player/States/player_run.gd" id="5_c7660"]
 [ext_resource type="Script" uid="uid://disnpeb1gm84n" path="res://src/gameplay/player/States/player_jump.gd" id="6_6vmt3"]
 [ext_resource type="Script" uid="uid://de161ovm1jdt0" path="res://src/gameplay/player/States/player_fall.gd" id="7_61c8j"]
@@ -167,6 +168,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="WeaponManager" type="Node3D" parent="Head/Camera" unique_id=1697712813]
+script = ExtResource("4_ypdxs")
 
 [node name="TestGun" type="Node3D" parent="Head/Camera/WeaponManager" unique_id=1236906856]
 

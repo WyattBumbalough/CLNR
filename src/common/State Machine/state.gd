@@ -1,5 +1,5 @@
-extends Node
-class_name State
+@icon("res://addons/at-icons/node/arrow_double_horizontal.svg")
+class_name State extends Node 
 
 var character: Player
 

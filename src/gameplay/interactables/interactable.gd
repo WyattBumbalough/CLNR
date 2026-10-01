@@ -1,5 +1,5 @@
-class_name Interactable
-extends Node3D
+@icon("res://addons/at-icons/node3d/hand.svg")
+class_name Interactable extends Node3D
 
 signal interacted
 

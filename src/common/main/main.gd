@@ -79,9 +79,9 @@ func _deferred_load_level(new_level_uid: String):
 		transition.fade_in()
 
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("open_stats"):
-		hud.toggle_hud()
+#func _input(_event: InputEvent) -> void:
+	#if Input.is_action_just_pressed("open_stats"):
+		#hud.toggle_hud()
 	
 	#if Input.is_action_just_pressed("open_stats"):
 		#if get_tree().paused == false:

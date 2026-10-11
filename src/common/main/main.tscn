@@ -191,9 +191,6 @@ script = ExtResource("1_bnsfs")
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 visible = false
 
 [node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]
@@ -213,43 +210,7 @@ scale = Vector2(1.58, 1.58)
 MAIN = NodePath("../../..")
 
 [node name="SelectedMission" type="Control" parent="HudLayer/HUD" unique_id=120741182]
->>>>>>> Stashed changes
-visible = false
-=======
->>>>>>> parent of 72105df (wyatt hlp pls)
-
-[node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-script = ExtResource("2_i71h3")
-
-[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
-layout_mode = 1
-scale = Vector2(1.58, 1.58)
-MAIN = NodePath("../../..")
-
-[node name="SelectedMission" type="Control" parent="HudLayer/HUD" unique_id=120741182]
-visible = false
-top_level = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -221.0
-offset_top = -107.0
-offset_right = 222.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(1, 1e-05)
-pivot_offset = Vector2(221, 107)
+anchors_preset = 0
 
 [node name="Panel" type="TextureRect" parent="HudLayer/HUD/SelectedMission" unique_id=786953237]
 layout_mode = 1
@@ -277,6 +238,28 @@ label_settings = SubResource("LabelSettings_amj6u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StatScreen2" parent="HudLayer/HUD" unique_id=1587768060 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
+layout_mode = 1
+scale = Vector2(1.58, 1.58)
+MAIN = NodePath("../../..")
+
+[node name="SelectedMission2" type="Control" parent="HudLayer/HUD" unique_id=221967091]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -107.0
+offset_right = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1e-05)
+pivot_offset = Vector2(221, 107)
+
 [node name="ColorRect" type="ColorRect" parent="HudLayer/HUD" unique_id=1342208981]
 material = SubResource("ShaderMaterial_ulfwm")
 layout_mode = 1
@@ -291,6 +274,17 @@ color = Color(1, 1, 1, 0)
 
 [node name="HudAnims" type="AnimationPlayer" parent="HudLayer/HUD" unique_id=1198029735]
 libraries/ = SubResource("AnimationLibrary_r8he6")
+
+[node name="HUD2" type="Control" parent="HudLayer" unique_id=102526393]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_i71h3")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
 layer = 25

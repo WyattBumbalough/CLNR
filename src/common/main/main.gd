@@ -37,7 +37,7 @@ func _init_player() -> void:
 	if is_instance_valid(player_scene):
 		player = player_scene.instantiate()
 		Refs.player = player
-		player.hud = hud # Should probably not be here. Prone to breaking.
+		#player.hud = hud # Should probably not be here. Prone to breaking.
 	else: 
 		push_error("Could not load player scene: " + PLAYER_UID)
 	

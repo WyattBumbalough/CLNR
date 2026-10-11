@@ -74,6 +74,7 @@ script = ExtResource("1_bnsfs")
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 visible = false
@@ -97,6 +98,8 @@ MAIN = NodePath("../../..")
 [node name="SelectedMission" type="Control" parent="HudLayer/HUD" unique_id=120741182]
 >>>>>>> Stashed changes
 visible = false
+=======
+>>>>>>> parent of 72105df (wyatt hlp pls)
 
 [node name="HUDRoot" type="Control" parent="HudLayer" unique_id=1546522877]
 layout_mode = 3

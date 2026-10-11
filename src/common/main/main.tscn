@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b646dhn8pufc5" path="res://src/common/main/scene_loader.gd" id="2_amj6u"]
 [ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="2_i71h3"]
 [ext_resource type="Script" uid="uid://brupmecsdsjuk" path="res://src/common/autoloads/MissionLog.gd" id="2_ulfwm"]
+[ext_resource type="Resource" uid="uid://p1tymvir1pnv" path="res://src/resources/mission_resources/mData_sandbox.tres" id="4_i71h3"]
 
 [node name="Game" type="Node" unique_id=701013822 node_paths=PackedStringArray("level_root", "enitities_root", "hud_root", "ui_root", "transition_root", "debug_root", "scene_loader", "mission_log")]
 process_mode = 3
@@ -24,6 +25,7 @@ script = ExtResource("2_amj6u")
 
 [node name="MissionLog" type="Node" parent="Subsystems" unique_id=1106080216]
 script = ExtResource("2_ulfwm")
+selected_mission = ExtResource("4_i71h3")
 
 [node name="World" type="Node3D" parent="." unique_id=1000134336]
 

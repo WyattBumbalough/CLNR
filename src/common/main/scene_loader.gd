@@ -64,5 +64,6 @@ func deferred_load_level() -> void:
 	
 	if is_instance_valid(current_level):
 		Game.current.level_root.add_child(current_level)
+		Game.current.player.unfreeze()
 		current_level.setup_level(Game.current.player)
 		load_finished.emit()

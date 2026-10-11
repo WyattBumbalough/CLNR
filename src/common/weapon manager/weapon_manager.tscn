@@ -10,8 +10,10 @@ script = ExtResource("1_sc5ns")
 [node name="WeaponHolder" type="Node3D" parent="." unique_id=149041454]
 
 [node name="Slot1" type="Node3D" parent="WeaponHolder" unique_id=1075143720]
+visible = false
 script = ExtResource("2_4j5uq")
 
 [node name="Slot2" type="Node3D" parent="WeaponHolder" unique_id=1445328160]
+visible = false
 
 [node name="TestGun" parent="WeaponHolder/Slot2" unique_id=395617308 instance=ExtResource("3_8d2wd")]

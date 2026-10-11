@@ -74,6 +74,28 @@ script = ExtResource("1_bnsfs")
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
+<<<<<<< Updated upstream
+=======
+visible = false
+
+[node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_i71h3")
+
+[node name="StatScreen" parent="HudLayer/HUD" unique_id=1412430864 node_paths=PackedStringArray("MAIN") instance=ExtResource("2_x4vwa")]
+layout_mode = 1
+scale = Vector2(1.58, 1.58)
+MAIN = NodePath("../../..")
+
+[node name="SelectedMission" type="Control" parent="HudLayer/HUD" unique_id=120741182]
+>>>>>>> Stashed changes
 visible = false
 
 [node name="HUDRoot" type="Control" parent="HudLayer" unique_id=1546522877]

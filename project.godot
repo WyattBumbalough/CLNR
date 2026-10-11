@@ -14,8 +14,11 @@ config/name="Cleaner"
 run/main_scene="uid://otgdbccdq58h"
 config/features=PackedStringArray("4.7", "Forward Plus")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 config/icon="res://assets/textures/icon.svg"
 =======
+=======
+>>>>>>> Stashed changes
 config/icon="res://assets/textures/icons/icon.svg"
 
 [audio]

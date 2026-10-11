@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwbnqokyddu2c"]
 
-[ext_resource type="Script" uid="uid://drj8tiw71ykwb" path="res://src/common/Spawner/spawner.gd" id="1_k52uv"]
+[ext_resource type="Script" uid="uid://drj8tiw71ykwb" path="res://src/common/spawner/spawner.gd" id="1_k52uv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2ty7"]
 transparency = 1

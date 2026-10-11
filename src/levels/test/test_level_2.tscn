@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dx75tiktrkon6" path="res://src/levels/BaseLevel.gd" id="1_qmhfo"]
 [ext_resource type="Material" uid="uid://b68l5axdwrlc6" path="res://assets/textures/materials/grid.tres" id="2_0jyuh"]
 [ext_resource type="Script" uid="uid://co3ws05vglmxk" path="res://src/gameplay/interactables/test objects/test_door.gd" id="3_lagnl"]
-[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_cbxxg"]
-[ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="4_lagnl"]
+[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="4_cbxxg"]
+[ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/spawner/spawner.tscn" id="4_lagnl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8hofm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

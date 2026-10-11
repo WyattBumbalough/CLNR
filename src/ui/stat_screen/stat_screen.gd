@@ -1,7 +1,7 @@
 class_name StatScreen
 extends Control
 
-@export var MAIN: Main
+@export var MAIN: Game
 #@export var augment_manager : AugmentManager
 @export var leg_aug : AugmentResource
 @export var health_aug : AugmentResource

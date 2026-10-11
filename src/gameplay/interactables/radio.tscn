@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctl5glvbbrcmy" path="res://src/gameplay/interactables/radio.gd" id="1_2ntfu"]
 [ext_resource type="AudioStream" uid="uid://cm4nydogb2bil" path="res://assets/sfx/music/StoneOcean_Rainboots_LQ.mp3" id="2_mmeyo"]
 [ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/gameplay/interactables/interactable.gd" id="3_uf6mw"]
-[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_2ntfu"]
+[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="4_2ntfu"]
 [ext_resource type="AudioStream" uid="uid://v44lntwhwgf" path="res://assets/sfx/music/Baggage Room.mp3" id="4_jt6vc"]
 [ext_resource type="AudioStream" uid="uid://t3snuyxhtywq" path="res://assets/sfx/music/The Deli - 5_32PM.mp3" id="4_y7hfb"]
 [ext_resource type="AudioStream" uid="uid://b7305isbbibv1" path="res://assets/sfx/music/ORR-@bëën_ladën.mp3" id="5_jt6vc"]

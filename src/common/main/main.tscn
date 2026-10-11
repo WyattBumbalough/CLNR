@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://otgdbccdq58h"]
 
-[ext_resource type="Script" uid="uid://ck03kqy61d1m3" path="res://src/common/main/main.gd" id="1_bnsfs"]
-[ext_resource type="Script" uid="uid://di1oy42q8m4dq" path="res://src/common/main/transitions.gd" id="2_3xxxc"]
+[ext_resource type="Script" uid="uid://ck03kqy61d1m3" path="res://src/common/main/Game.gd" id="1_bnsfs"]
 [ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="2_i71h3"]
+[ext_resource type="Script" uid="uid://brupmecsdsjuk" path="res://src/common/autoloads/MissionLog.gd" id="2_ulfwm"]
 [ext_resource type="PackedScene" uid="uid://cyrqsjqaj5jsw" path="res://src/ui/stat_screen/stat_screen.tscn" id="2_x4vwa"]
 [ext_resource type="Shader" uid="uid://co3vunuc4auov" path="res://assets/shaders/screenDistortion.gdshader" id="5_i71h3"]
 
@@ -125,63 +125,21 @@ _data = {
 &"open_hud": SubResource("Animation_26tuk")
 }
 
-[sub_resource type="Animation" id="Animation_x4vwa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_amj6u"]
-resource_name = "fade_in"
-length = 1.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_i71h3"]
-resource_name = "fade_out"
-length = 1.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ulfwm"]
-_data = {
-&"RESET": SubResource("Animation_x4vwa"),
-&"fade_in": SubResource("Animation_amj6u"),
-&"fade_out": SubResource("Animation_i71h3")
-}
-
-[node name="Main" type="Node" unique_id=701013822]
+[node name="Game" type="Node" unique_id=701013822 node_paths=PackedStringArray("level_root", "enitities_root", "hud_root", "ui_root", "transition_root", "debug_root", "mission_log")]
 process_mode = 3
 script = ExtResource("1_bnsfs")
+level_root = NodePath("World/Level")
+enitities_root = NodePath("World/Entities")
+hud_root = NodePath("HudLayer/HUD")
+ui_root = NodePath("UILayer/UI")
+transition_root = NodePath("TransitionLayer/Transition")
+debug_root = NodePath("DebugLayer/Debug")
+mission_log = NodePath("MissionLog")
+
+[node name="SceneLoader" type="Node" parent="." unique_id=1950211179]
+
+[node name="MissionLog" type="Node" parent="." unique_id=1106080216]
+script = ExtResource("2_ulfwm")
 
 [node name="World" type="Node3D" parent="." unique_id=1000134336]
 
@@ -290,20 +248,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("2_3xxxc")
-
-[node name="ColorRect" type="ColorRect" parent="TransitionLayer/Transition" unique_id=725855340]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer/Transition" unique_id=1364497207]
-libraries/ = SubResource("AnimationLibrary_ulfwm")
 
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1099247393]
 layer = 128
@@ -316,7 +260,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[connection signal="fade_in_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_in_finished"]
-[connection signal="fade_out_finished" from="TransitionLayer/Transition" to="." method="_on_transition_fade_out_finished"]
-[connection signal="animation_finished" from="TransitionLayer/Transition/AnimationPlayer" to="TransitionLayer/Transition" method="_on_animation_player_animation_finished"]

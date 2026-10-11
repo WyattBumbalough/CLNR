@@ -1,3 +1,5 @@
+@icon("res://addons/at-icons/node/book.svg")
+class_name MissionLog
 extends Node
 ## Mission Log Manager
 

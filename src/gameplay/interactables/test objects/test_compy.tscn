@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dkpwt85t5ie6o"]
 
-[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="1_d02ph"]
+[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="1_d02ph"]
 [ext_resource type="Script" uid="uid://cocpu62mrsibx" path="res://src/gameplay/interactables/test objects/test_compy.gd" id="1_jyn3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdwue"]

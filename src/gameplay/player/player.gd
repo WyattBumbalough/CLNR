@@ -41,7 +41,7 @@ var interact_ray_result
 
 
 func _ready() -> void:
-	Refs.player = self
+	#Refs.player = self
 	state_machine.initialize(self)
 	align_camera()
 	

@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/gameplay/interactables/interactable.gd" id="2_kynyw"]
 [ext_resource type="Material" uid="uid://b68l5axdwrlc6" path="res://assets/textures/materials/grid.tres" id="2_otc3b"]
 [ext_resource type="Texture2D" uid="uid://dqfjxkrwr0jq6" path="res://addons/kenney_prototype_textures/dark/texture_09.png" id="3_7hhpy"]
-[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="3_51wup"]
+[ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="3_51wup"]
 [ext_resource type="Texture2D" uid="uid://bjbcwhpn5xde" path="res://addons/kenney_prototype_textures/green/texture_10.png" id="4_kynyw"]
 [ext_resource type="Texture2D" uid="uid://3wvfvgpx5qy4" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="5_51wup"]
-[ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="6_otc3b"]
+[ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/spawner/spawner.tscn" id="6_otc3b"]
 [ext_resource type="PackedScene" uid="uid://cwjomq7poa3ul" path="res://src/gameplay/player/Player.tscn" id="9_51wup"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r03ke"]

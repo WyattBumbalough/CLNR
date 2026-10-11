@@ -21,10 +21,10 @@ buses/default_bus_layout="uid://b7w0r2djbbdoi"
 
 [autoload]
 
-Refs="*uid://dffd1lkvft1fx"
+Refs="uid://dffd1lkvft1fx"
 Events="*uid://gsifj344bf5p"
 Inventory="*uid://d3xnr6dk0m0pm"
-MissionLog="*uid://brupmecsdsjuk"
+MissionLog="uid://brupmecsdsjuk"
 AugmentManager="*uid://clm6guu3c7v3u"
 Screenshot="*uid://5p606g8rkd4v"
 

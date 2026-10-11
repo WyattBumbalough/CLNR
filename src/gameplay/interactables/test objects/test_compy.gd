@@ -1,6 +1,6 @@
 extends Interactable
 
-var MAIN : Main
+var MAIN : Game
 
 func _ready() -> void:
 	super()

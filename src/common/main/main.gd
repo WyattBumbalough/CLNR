@@ -107,11 +107,13 @@ func freeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = false
 		player.allow_look = false
+		player.allow_interaction = false
 
 func unfreeze_player() -> void:
 	if is_instance_valid(player):
 		player.allow_move = true
 		player.allow_look = true
+		player.allow_interaction = true
 
 
 #region signals

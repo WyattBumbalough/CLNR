@@ -154,6 +154,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="WeaponManager" parent="Head/Camera" unique_id=1108642686 instance=ExtResource("4_ypdxs")]
+visible = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=1214362270 node_paths=PackedStringArray("starting_state")]
 unique_name_in_owner = true

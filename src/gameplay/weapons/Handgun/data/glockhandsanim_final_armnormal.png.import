@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1trhbt587h68"
-path.s3tc="res://.godot/imported/glockhandsanim_final_armnormal.png-e3cd45f4e348c651ec5db9dc0dbd73ed.s3tc.ctex"
+path.s3tc="res://.godot/imported/glockhandsanim_final_armnormal.png-532f69a186b520ceb7ff1fe6458635f9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://src/gameplay/weapons/handgun/data/glockhandsanim_final_armnormal.png"
-dest_files=["res://.godot/imported/glockhandsanim_final_armnormal.png-e3cd45f4e348c651ec5db9dc0dbd73ed.s3tc.ctex"]
+source_file="res://src/gameplay/weapons/Handgun/data/glockhandsanim_final_armnormal.png"
+dest_files=["res://.godot/imported/glockhandsanim_final_armnormal.png-532f69a186b520ceb7ff1fe6458635f9.s3tc.ctex"]
 
 [params]
 

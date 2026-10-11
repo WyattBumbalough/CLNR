@@ -7,9 +7,9 @@ enum BuffType{
 	KILLYOURSELF
 }
 
-@export var stat        : StatsResource.BuffableStats
-@export var buff_amount : float
-@export var buff_type  : BuffType
+@export var stat: StatsResource.BuffableStats
+@export var buff_amount: float
+@export var buff_type: BuffType
 
 
 # Called when a new statbuff is instantiated. I.E. you could call StatBuff.new() in another script.

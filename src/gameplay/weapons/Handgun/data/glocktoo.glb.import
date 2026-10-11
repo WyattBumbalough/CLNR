@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://62lhk5gtc46k"
-path="res://.godot/imported/glocktoo.glb-b12a354705b8d8a86cf5c905872c04ec.scn"
+path="res://.godot/imported/glocktoo.glb-227a290786081d7014213f48fcded96f.scn"
 
 [deps]
 
-source_file="res://src/gameplay/weapons/Handgun/data/glocktoo.glb"
-dest_files=["res://.godot/imported/glocktoo.glb-b12a354705b8d8a86cf5c905872c04ec.scn"]
+source_file="res://src/gameplay/weapons/handgun/data/glocktoo.glb"
+dest_files=["res://.godot/imported/glocktoo.glb-227a290786081d7014213f48fcded96f.scn"]
 
 [params]
 

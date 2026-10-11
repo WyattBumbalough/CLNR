@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cubd7ugfcjbah"]
 
-[ext_resource type="Texture2D" uid="uid://hd5l0qvsgrun" path="res://src/gameplay/weapons/Handgun/data/glockhandsanim_final_armColor.png" id="1_ce46a"]
-[ext_resource type="Texture2D" uid="uid://d1trhbt587h68" path="res://src/gameplay/weapons/Handgun/data/glockhandsanim_final_armnormal.png" id="2_d556f"]
+[ext_resource type="Texture2D" uid="uid://hd5l0qvsgrun" path="res://src/gameplay/weapons/handgun/data/glockhandsanim_final_armColor.png" id="1_ce46a"]
+[ext_resource type="Texture2D" uid="uid://d1trhbt587h68" path="res://src/gameplay/weapons/handgun/data/glockhandsanim_final_armnormal.png" id="2_d556f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vc6u4"]
 resource_name = "Slide.001"

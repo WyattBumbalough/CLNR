@@ -60,7 +60,6 @@ func recalculate_stats() -> void:
 					stat_addends[stat_name] = 0.0
 				stat_addends[stat_name] += buff.buff_amount
 		
-	
 	# Set current level of each stat before buffs.
 	#var curve_sample_pos: float = (float(level) / 100.0) - 0.01
 	current_max_health = base_max_health #* STAT_CURVES[BuffableStats.MAX_HEALTH].sample(curve_sample_pos)

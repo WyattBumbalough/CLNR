@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MissionData" format=3 uid="uid://085hs6gdcw23"]
 
-[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/missions/mission_data.gd" id="1_h41nk"]
+[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/mission_resources/mission_data.gd" id="1_h41nk"]
 [ext_resource type="Texture2D" uid="uid://du1ddadjh6k3e" path="res://assets/ss/tstlvl2.png" id="2_h41nk"]
 
 [resource]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b1xkxwfoc6hbr"
-path="res://.godot/imported/glockhandsanim_final.glb-0c67ac8f622e29c784fa94b8710b2762.scn"
+path="res://.godot/imported/glockhandsanim_final.glb-fea8c538f80ea1a6b1e36949b6714af6.scn"
 
 [deps]
 
-source_file="res://src/gameplay/weapons/Handgun/data/glockhandsanim_final.glb"
-dest_files=["res://.godot/imported/glockhandsanim_final.glb-0c67ac8f622e29c784fa94b8710b2762.scn"]
+source_file="res://src/gameplay/weapons/handgun/data/glockhandsanim_final.glb"
+dest_files=["res://.godot/imported/glockhandsanim_final.glb-fea8c538f80ea1a6b1e36949b6714af6.scn"]
 
 [params]
 

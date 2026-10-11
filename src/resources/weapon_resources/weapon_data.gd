@@ -1,8 +1,11 @@
-class_name WeaponData extends Node
+@icon("res://addons/at-icons/node/file_cog.svg")
+class_name WeaponData
+extends Resource
 
 @export_group("General Settings")
 @export var weapon_name: String
 @export var weapon_id: int ## Must match ID of weapon slot in weapon manager.
+@export var weapon_scene_uid: String = ""
 
 @export_group("Attack Settings")
 #var is_shooting: bool = false

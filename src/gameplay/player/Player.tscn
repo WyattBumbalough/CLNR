@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d3e6bfqrdanju" path="res://src/gameplay/player/player.gd" id="1_2v7dq"]
 [ext_resource type="Script" uid="uid://c435fcwsjn58i" path="res://src/gameplay/player/States/player_state_machine.gd" id="2_7og37"]
-[ext_resource type="Script" uid="uid://b46w88fxtl46b" path="res://src/resources/stats/stats_resource.gd" id="2_21ga0"]
-[ext_resource type="Script" uid="uid://ctxj3biubhky7" path="res://src/resources/stats/stat_buff.gd" id="3_2s24v"]
+[ext_resource type="Script" uid="uid://b46w88fxtl46b" path="res://src/resources/stat_resources/stats_resource.gd" id="2_21ga0"]
+[ext_resource type="Script" uid="uid://ctxj3biubhky7" path="res://src/resources/stat_resources/stat_buff.gd" id="3_2s24v"]
 [ext_resource type="Script" uid="uid://b7buwxinxyh7i" path="res://src/gameplay/player/States/player_idle.gd" id="3_oeplr"]
 [ext_resource type="Script" uid="uid://hl5i56hdi4uo" path="res://src/gameplay/player/States/player_walk.gd" id="4_r4xyb"]
-[ext_resource type="Script" uid="uid://udmxmool0ugb" path="res://src/common/weapon manager/weapon_manager.gd" id="4_ypdxs"]
+[ext_resource type="PackedScene" uid="uid://ct1vnh57w1so3" path="res://src/common/weapon manager/weapon_manager.tscn" id="4_ypdxs"]
 [ext_resource type="Script" uid="uid://xl8ijqm5sg7h" path="res://src/gameplay/player/States/player_run.gd" id="5_c7660"]
 [ext_resource type="Script" uid="uid://disnpeb1gm84n" path="res://src/gameplay/player/States/player_jump.gd" id="6_6vmt3"]
 [ext_resource type="Script" uid="uid://de161ovm1jdt0" path="res://src/gameplay/player/States/player_fall.gd" id="7_61c8j"]
@@ -19,9 +19,10 @@
 script = ExtResource("2_21ga0")
 metadata/_custom_type_script = "uid://b46w88fxtl46b"
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_mvdsw"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2v7dq"]
+height = 2.7124023
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mvdsw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_oeplr"]
 size = Vector3(0.51, 0.32, 1.095)
@@ -31,20 +32,9 @@ albedo_color = Color(0.10224319, 0.10224321, 0.10224321, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_sbnxc"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_21ga0"]
-radius = 0.235
-
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2v7dq"]
 dof_blur_far_enabled = true
 dof_blur_amount = 0.03
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ga0"]
-specular_mode = 1
-albedo_color = Color(0.30588236, 0.39215687, 0.45490196, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_2s24v"]
-material = SubResource("StandardMaterial3D_21ga0")
-size = Vector3(0.195, 0.37, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r4xyb"]
 font_size = 50
@@ -117,38 +107,34 @@ _data = {
 &"hud_open": SubResource("Animation_ypdxs")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_ulph6"]
-
 [node name="Player" type="CharacterBody3D" unique_id=222571555]
 process_mode = 1
 script = ExtResource("1_2v7dq")
 stats = SubResource("Resource_2s24v")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1284730491]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1117889445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3562012, 0)
+shape = SubResource("CapsuleShape3D_2v7dq")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1357994668]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals" unique_id=1284730491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 524288
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_mvdsw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1117889445]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_2v7dq")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=966979552]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Visuals" unique_id=966979552]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.33141991, 0, 2.5070636, -0.2320059)
 layers = 524288
 mesh = SubResource("BoxMesh_oeplr")
 surface_material_override/0 = SubResource("StandardMaterial3D_wsixc")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=976964842]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals" unique_id=976964842]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.4102087, 0)
 visible = false
 layers = 524288
 mesh = SubResource("SphereMesh_sbnxc")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=429867215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-shape = SubResource("SphereShape3D_21ga0")
 
 [node name="Head" type="Node3D" parent="." unique_id=1586777397]
 unique_name_in_owner = true
@@ -167,16 +153,7 @@ collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="WeaponManager" type="Node3D" parent="Head/Camera" unique_id=1697712813]
-script = ExtResource("4_ypdxs")
-
-[node name="TestGun" type="Node3D" parent="Head/Camera/WeaponManager" unique_id=1236906856]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera/WeaponManager/TestGun" unique_id=1028800639]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18744326, -0.36660814, -0.5)
-visible = false
-cast_shadow = 0
-mesh = SubResource("BoxMesh_2s24v")
+[node name="WeaponManager" parent="Head/Camera" unique_id=1108642686 instance=ExtResource("4_ypdxs")]
 
 [node name="StateMachine" type="Node" parent="." unique_id=1214362270 node_paths=PackedStringArray("starting_state")]
 unique_name_in_owner = true
@@ -282,18 +259,3 @@ bus = &"Footsteps"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1310358581]
 libraries/ = SubResource("AnimationLibrary_xxijo")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1198242318]
-transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, 2, 1.5, -4)
-visible = false
-mesh = SubResource("BoxMesh_ulph6")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1458177257]
-transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, -6.5, 1.5, -8)
-visible = false
-mesh = SubResource("BoxMesh_ulph6")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1327324545]
-transform = Transform3D(3.4, 0, 0, 0, 3, 0, 0, 0, 1, -2, 1.5, -11)
-visible = false
-mesh = SubResource("BoxMesh_ulph6")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ct1vnh57w1so3"]
+
+[ext_resource type="Script" uid="uid://udmxmool0ugb" path="res://src/common/weapon manager/weapon_manager.gd" id="1_sc5ns"]
+[ext_resource type="Script" uid="uid://basstyg3t0ja6" path="res://src/common/weapon manager/weapon_slot.gd" id="2_4j5uq"]
+[ext_resource type="PackedScene" uid="uid://c1jsgaem7tud1" path="res://src/gameplay/weapons/test_gun/test_gun.tscn" id="3_8d2wd"]
+
+[node name="WeaponManager" type="Node3D" unique_id=1108642686]
+script = ExtResource("1_sc5ns")
+
+[node name="WeaponHolder" type="Node3D" parent="." unique_id=149041454]
+
+[node name="Slot1" type="Node3D" parent="WeaponHolder" unique_id=1075143720]
+script = ExtResource("2_4j5uq")
+
+[node name="Slot2" type="Node3D" parent="WeaponHolder" unique_id=1445328160]
+
+[node name="TestGun" parent="WeaponHolder/Slot2" unique_id=395617308 instance=ExtResource("3_8d2wd")]

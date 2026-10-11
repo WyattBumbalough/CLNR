@@ -75,7 +75,10 @@ script = ExtResource("1_bnsfs")
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 visible = false
 
 [node name="HUD" type="Control" parent="HudLayer" unique_id=1546522877]

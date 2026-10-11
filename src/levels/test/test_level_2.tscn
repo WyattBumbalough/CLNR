@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="4_lagnl"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dcajapruvnovd" path="res://src/levels/test/payper.gd" id="5_lagnl"]
 [ext_resource type="AudioStream" uid="uid://2cc76tm2mfeo" path="res://assets/audio/randy_where.mp3" id="5_lkli5"]
 [ext_resource type="Texture2D" uid="uid://c5rf2g35omq33" path="res://assets/textures/materials/payper.png" id="6_8mbyg"]
@@ -17,6 +18,10 @@
 [ext_resource type="AudioStream" uid="uid://ccdlrrk2mhpcf" path="res://assets/audio/UI_note.mp3" id="12_nkqwq"]
 [ext_resource type="AudioStream" uid="uid://cvqjrj0gtgati" path="res://assets/audio/me_humming_paulstretch.mp3" id="13_j26cx"]
 [ext_resource type="Script" uid="uid://tqx51qoskveo" path="res://src/levels/test/he_2.gd" id="13_l78ke"]
+=======
+[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="6_lagnl"]
+[ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="7_cbxxg"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="6_lagnl"]
 [ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="7_cbxxg"]
@@ -326,6 +331,7 @@ transform = Transform3D(1.0000001, 0, 1.7484558e-07, 0, 1, 0, -1.7484558e-07, 0,
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="He" type="Node3D" parent="." unique_id=1565917292 node_paths=PackedStringArray("interaction_area", "mesh")]
 transform = Transform3D(0.029813543, 0, 0, 0, 1, 0, 0, 0, 1, -5.3071537, 0, 0)
 script = ExtResource("10_j26cx")
@@ -389,6 +395,8 @@ autoplay = true
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 [node name="3DCursor" type="Marker3D" parent="." unique_id=984217721 groups=["Plugin3DCursor"] instance=ExtResource("6_lagnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.31836, 53.29181, -40)
 gizmo_extents = 0.0
@@ -400,6 +408,9 @@ metadata/show_number_label = true
 metadata/scale_affect_labels = true
 metadata/_edit_lock_ = true
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

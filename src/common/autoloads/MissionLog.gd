@@ -5,9 +5,9 @@ extends Node
 
 signal mission_selected
 
-var available_missions : Array[MissionData]
-var completed_missions : Array[MissionData]
-var selected_mission   : MissionData
+@export var available_missions : Array[MissionData]
+@export var completed_missions : Array[MissionData]
+@export var selected_mission   : MissionData
 
 
 func select_mission(_mission: MissionData) -> void:

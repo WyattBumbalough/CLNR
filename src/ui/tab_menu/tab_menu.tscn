@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://bm06v4a7y8y0u"]
+
+[ext_resource type="Shader" uid="uid://co3vunuc4auov" path="res://assets/shaders/screenDistortion.gdshader" id="1_hddko"]
+[ext_resource type="Script" uid="uid://gm1c7loemkdk" path="res://src/ui/stat_screen/stat_screen.gd" id="1_kv2ug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv2ug"]
+shader = ExtResource("1_hddko")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.010000000475
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="Animation" id="Animation_ulfwm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/warp_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/grille_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/aberration")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.7499999933364734e-08]
+}
+
+[sub_resource type="Animation" id="Animation_26tuk"]
+resource_name = "new_animation"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/warp_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, 2.158000102505]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/grille_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, 0.10000000475]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/aberration")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.7499999933364734e-08, 0.01000004797499998]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d5cjb"]
+_data = {
+&"RESET": SubResource("Animation_ulfwm"),
+&"open_hud": SubResource("Animation_26tuk")
+}
+
+[sub_resource type="Gradient" id="Gradient_amj6u"]
+colors = PackedColorArray(0, 0, 0, 0.2784314, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kv2ug"]
+gradient = SubResource("Gradient_amj6u")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5cjb"]
+font_size = 20
+
+[node name="TabMenu" type="Control" unique_id=356924391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kv2ug")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=375995704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1592556899]
+layout_mode = 2
+theme_override_constants/separation = 43
+
+[node name="Stats" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1000013950]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/Stats" unique_id=649596262]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Stats/PanelContainer" unique_id=2144761877]
+layout_mode = 2
+text = "STATUS"
+horizontal_alignment = 1
+
+[node name="MaxHealth" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Stats" unique_id=1348168707]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Stats/MaxHealth" unique_id=625688881]
+layout_mode = 2
+text = "MAX HEALTH : "
+
+[node name="MaxHealthLabel" type="Label" parent="MarginContainer/HBoxContainer/Stats/MaxHealth" unique_id=914844359]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "15"
+
+[node name="Defense" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Stats" unique_id=1404732910]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Stats/Defense" unique_id=1731655993]
+layout_mode = 2
+text = "DEFENSE : "
+
+[node name="DefenseLabel" type="Label" parent="MarginContainer/HBoxContainer/Stats/Defense" unique_id=1355244011]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "15"
+
+[node name="MoveSpeed" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Stats" unique_id=279257029]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Stats/MoveSpeed" unique_id=1051775341]
+layout_mode = 2
+text = "MOVE SPEED : "
+
+[node name="MoveSpeedLabel" type="Label" parent="MarginContainer/HBoxContainer/Stats/MoveSpeed" unique_id=664510667]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "4.5"
+
+[node name="SprintAdd" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Stats" unique_id=1328646816]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Stats/SprintAdd" unique_id=1583977699]
+layout_mode = 2
+text = "SPRINT ADD : "
+
+[node name="SprintAddLabel" type="Label" parent="MarginContainer/HBoxContainer/Stats/SprintAdd" unique_id=1564043146]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "2.5"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=474286139]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Leg" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1206469317]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "Buy Leg Augments"
+
+[node name="Head" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1349797527]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "Buy Health Augments"
+
+[node name="Body" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=719241025]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "Buy Body Augments"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1436616702]
+visible = false
+material = SubResource("ShaderMaterial_kv2ug")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HudAnims" type="AnimationPlayer" parent="." unique_id=418091590]
+libraries/ = SubResource("AnimationLibrary_d5cjb")
+
+[node name="SelectedMission" type="Control" parent="." unique_id=473924593]
+top_level = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -107.0
+offset_right = 222.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1e-05)
+pivot_offset = Vector2(221, 107)
+
+[node name="Panel" type="TextureRect" parent="SelectedMission" unique_id=285322602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kv2ug")
+
+[node name="MarginContainer" type="MarginContainer" parent="SelectedMission/Panel" unique_id=493583040]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+
+[node name="Label" type="Label" parent="SelectedMission/Panel/MarginContainer" unique_id=1274260946]
+layout_mode = 2
+text = "Mission Selected: This one"
+label_settings = SubResource("LabelSettings_d5cjb")
+horizontal_alignment = 1
+vertical_alignment = 1

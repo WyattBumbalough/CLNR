@@ -138,18 +138,14 @@ func _on_hud_opened() -> void:
 func _on_hud_closed() -> void:
 	animation_player.play_backwards("hud_open")
 
-##func disable_player():
+
+func freeze():
+	set_physics_process(false)
 	#allow_move = false
-	#allow_look = false
-	#allow_jump = false
-	#allow_crouch = false
-	#allow_sprint = false
-	#allow_interaction = false
-#
-##func enable_player():
-	#allow_move = true
-	#allow_look = true
-	#allow_jump = true
-	#allow_crouch = true
-	#allow_sprint = true
-	#allow_interaction = true
+	allow_look = false
+	allow_interaction = false
+
+func unfreeze():
+	set_physics_process(true)
+	allow_look = true
+	allow_interaction = true

@@ -74,6 +74,7 @@ script = ExtResource("1_bnsfs")
 
 [node name="HudLayer" type="CanvasLayer" parent="." unique_id=88440476]
 layer = 10
+visible = false
 
 [node name="HUDRoot" type="Control" parent="HudLayer" unique_id=1546522877]
 layout_mode = 3

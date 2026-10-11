@@ -5,51 +5,16 @@
 [ext_resource type="Script" uid="uid://co3ws05vglmxk" path="res://src/gameplay/interactables/test objects/test_door.gd" id="3_lagnl"]
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/Components/interaction_area.gd" id="4_cbxxg"]
 [ext_resource type="PackedScene" uid="uid://bwbnqokyddu2c" path="res://src/common/Spawner/spawner.tscn" id="4_lagnl"]
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> parent of 72105df (wyatt hlp pls)
 [ext_resource type="Script" uid="uid://dcajapruvnovd" path="res://src/levels/test/payper.gd" id="5_lagnl"]
 [ext_resource type="AudioStream" uid="uid://2cc76tm2mfeo" path="res://assets/audio/randy_where.mp3" id="5_lkli5"]
 [ext_resource type="Texture2D" uid="uid://c5rf2g35omq33" path="res://assets/textures/materials/payper.png" id="6_8mbyg"]
+[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="6_lagnl"]
 [ext_resource type="Texture2D" uid="uid://dwb33lfgy53fk" path="res://assets/textures/materials/note.png" id="7_6dynn"]
-[ext_resource type="Texture2D" uid="uid://cvo76s7x4chse" path="res://assets/textures/materials/BDRNUHM.png" id="7_cbxxg"]
 [ext_resource type="AudioStream" uid="uid://b4ndb2dhj2l5v" path="res://assets/audio/payper_rustle.mp3" id="7_ww0yq"]
 [ext_resource type="Script" uid="uid://m5xfugu8lagx" path="res://src/levels/test/he.gd" id="10_j26cx"]
 [ext_resource type="AudioStream" uid="uid://ccdlrrk2mhpcf" path="res://assets/audio/UI_note.mp3" id="12_nkqwq"]
 [ext_resource type="AudioStream" uid="uid://cvqjrj0gtgati" path="res://assets/audio/me_humming_paulstretch.mp3" id="13_j26cx"]
 [ext_resource type="Script" uid="uid://tqx51qoskveo" path="res://src/levels/test/he_2.gd" id="13_l78ke"]
-<<<<<<< HEAD
-=======
-[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="6_lagnl"]
-[ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="7_cbxxg"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="6_lagnl"]
-[ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="7_cbxxg"]
->>>>>>> Stashed changes
-=======
->>>>>>> parent of 72105df (wyatt hlp pls)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8hofm"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_dw1xv"]
-sky_material = SubResource("ProceduralSkyMaterial_8hofm")
-
-[sub_resource type="Environment" id="Environment_ytfmf"]
-background_mode = 2
-sky = SubResource("Sky_dw1xv")
-ssao_enabled = true
-ssao_radius = 1.2
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.50885665, 0.54417044, 0.59910434, 1)
-fog_light_energy = 1.66
-fog_density = 0.045
-adjustment_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8mbyg"]
 data = PackedVector3Array(-1, -1.75, 0.10986328, -1, -1.75, -0.10986328, -1, 1.75, -0.10986328, 1, -1.75, -0.10986328, -1, -1.75, -0.10986328, -1, -1.75, 0.10986328, -1, 1.75, -0.10986328, -1, -1.75, -0.10986328, 1, -1.75, -0.10986328, -1, 1.75, -0.10986328, -1, 1.75, 0.10986328, -1, -1.75, 0.10986328, -1, -1.75, 0.10986328, -1, 1.75, 0.10986328, 1, 1.75, 0.10986328, 1, 1.75, 0.10986328, -1, 1.75, 0.10986328, -1, 1.75, -0.10986328, -1, -1.75, 0.10986328, 1, -1.75, 0.10986328, 1, -1.75, -0.10986328, 1, 1.75, 0.10986328, 1, -1.75, 0.10986328, -1, -1.75, 0.10986328, 1, -1.75, -0.10986328, 1, -1.75, 0.10986328, 1, 1.75, 0.10986328, 1, -1.75, -0.10986328, 1, 1.75, -0.10986328, -1, 1.75, -0.10986328, -1, 1.75, -0.10986328, 1, 1.75, -0.10986328, 1, 1.75, 0.10986328, 1, 1.75, 0.10986328, 1, 1.75, -0.10986328, 1, -1.75, -0.10986328)
@@ -97,7 +62,6 @@ alpha_antialiasing_mode = 0
 blend_mode = 4
 depth_draw_mode = 2
 no_depth_test = true
-albedo_texture = ExtResource("7_cbxxg")
 billboard_keep_scale = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ww0yq"]
@@ -106,9 +70,6 @@ size = Vector3(1, 2.4811401, 1.6148682)
 [node name="TestLevel_2" type="Node3D" unique_id=346895251 node_paths=PackedStringArray("default_spawner")]
 script = ExtResource("1_qmhfo")
 default_spawner = NodePath("Spawner2")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=798277567]
-environment = SubResource("Environment_ytfmf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=999523296]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -330,11 +291,6 @@ texture = ExtResource("7_6dynn")
 [node name="Spawner2" parent="." unique_id=1195410701 instance=ExtResource("4_lagnl")]
 transform = Transform3D(1.0000001, 0, 1.7484558e-07, 0, 1, 0, -1.7484558e-07, 0, 1.0000001, 4.5, 0, 10.249998)
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> parent of 72105df (wyatt hlp pls)
 [node name="He" type="Node3D" parent="." unique_id=1565917292 node_paths=PackedStringArray("interaction_area", "mesh")]
 transform = Transform3D(0.029813543, 0, 0, 0, 1, 0, 0, 0, 1, -5.3071537, 0, 0)
 script = ExtResource("10_j26cx")
@@ -391,27 +347,15 @@ stream = ExtResource("12_nkqwq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1446963322]
 stream = ExtResource("13_j26cx")
-autoplay = true
 
-[connection signal="finished" from="HUH" to="He" method="_on_huh_finished"]
-[connection signal="finished" from="HUH2" to="He" method="_on_huh_finished"]
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Stashed changes
-[node name="3DCursor" type="Marker3D" parent="." unique_id=984217721 groups=["Plugin3DCursor"] instance=ExtResource("6_lagnl")]
+[node name="3DCursor" parent="." unique_id=984217721 instance=ExtResource("6_lagnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.31836, 53.29181, -40)
-gizmo_extents = 0.0
-script = ExtResource("7_cbxxg")
 metadata/cursor_id = 0
 metadata/size_scale = 1.0
 metadata/show_title_label = true
 metadata/show_number_label = true
 metadata/scale_affect_labels = true
 metadata/_edit_lock_ = true
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> parent of 72105df (wyatt hlp pls)
+
+[connection signal="finished" from="HUH" to="He" method="_on_huh_finished"]
+[connection signal="finished" from="HUH2" to="He" method="_on_huh_finished"]

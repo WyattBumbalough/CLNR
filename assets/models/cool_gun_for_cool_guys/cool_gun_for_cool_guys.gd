@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var radio_sounds: AudioStreamPlayer3D = $"../Radio/RadioAudio"
-@onready var track: AudioStreamPlaylist = radio_sounds.stream
+@onready var radio_sounds: AudioStreamPlayer3D = $"../Radio/Audio"
+#@onready var track: AudioStreamPlaylist = radio_sounds.stream
 @onready var can_interact: bool = true
 @onready var fan: AnimationPlayer = $"../../Fan/AnimationPlayer"
 @onready var lights :Node3D = $"../../Lights"
@@ -51,13 +51,13 @@ func _on_creepy_timer_timeout() -> void:
 
 func _on_creepiertimer_timeout() -> void:
 	%creepier.play()
-
-
-
+	%up.play()
+	%ceiling.play("raise the roof")
+	%Fan.visible = false
 func _on_stahp_timeout() -> void:
 	%creepier.stop()
 	%creepy.stop()
-
+	
 
 func _on_coolaudioforcoolguys_finished() -> void:
 	get_tree().quit()

@@ -2,8 +2,13 @@
 class_name SceneLoader
 extends Node
 ## Handles multi-threaded loading/changing of scenes.
+##
+## Useful for loading large scenes without bogging down the main process thread
 
+# Emitted every tick as a resource is being loaded. Progress represented
+# as a float value from 0-1.
 signal progress_changed(progress)
+# Emitted after the level has been loaded, instantied, and setup.
 signal load_finished
 
 var scene_path: String
@@ -13,7 +18,6 @@ var progress: Array = []
 var use_sub_threads: bool = true
 
 var current_level: LevelBase
-
 
 func _ready() -> void:
 	set_process(false)
@@ -65,5 +69,6 @@ func deferred_load_level() -> void:
 	if is_instance_valid(current_level):
 		Game.current.level_root.add_child(current_level)
 		Game.current.player.unfreeze()
+		
 		current_level.setup_level(Game.current.player)
 		load_finished.emit()

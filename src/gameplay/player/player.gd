@@ -41,7 +41,7 @@ var interact_ray_result
 
 
 func _ready() -> void:
-	#Refs.player = self
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	state_machine.initialize(self)
 	align_camera()
 	
@@ -91,7 +91,6 @@ func handle_movement(speed: float, acceleration: float, friction: float):
 	
 	if allow_look == false:
 		return
-	
 	if is_on_floor():
 		if direction:
 			velocity.x = lerp(velocity.x, direction.x * speed, acceleration)
@@ -132,13 +131,6 @@ func interact() -> void:
 		interact_ray_result.emit_signal("interacted")
 
 
-func _on_hud_opened() -> void:
-	animation_player.play("hud_open")
-
-func _on_hud_closed() -> void:
-	animation_player.play_backwards("hud_open")
-
-
 func freeze():
 	set_physics_process(false)
 	#allow_move = false
@@ -149,3 +141,10 @@ func unfreeze():
 	set_physics_process(true)
 	allow_look = true
 	allow_interaction = true
+
+
+func _on_hud_opened() -> void:
+	animation_player.play("hud_open")
+
+func _on_hud_closed() -> void:
+	animation_player.play_backwards("hud_open")

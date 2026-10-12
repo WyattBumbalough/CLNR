@@ -1,4 +1,5 @@
-#class_name AugmentManager
+@icon("res://addons/at-icons/node/cpu.svg")
+class_name AugmentManager
 extends Node
 
 @export var installed_augs : Array[AugmentResource]

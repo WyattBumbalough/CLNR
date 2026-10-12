@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://otgdbccdq58h"]
 
-[ext_resource type="Script" uid="uid://ck03kqy61d1m3" path="res://src/common/main/Game.gd" id="1_bnsfs"]
-[ext_resource type="Script" uid="uid://b646dhn8pufc5" path="res://src/common/main/scene_loader.gd" id="2_amj6u"]
-[ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="2_i71h3"]
-[ext_resource type="Script" uid="uid://brupmecsdsjuk" path="res://src/common/autoloads/MissionLog.gd" id="2_ulfwm"]
-[ext_resource type="Resource" uid="uid://p1tymvir1pnv" path="res://src/resources/mission_resources/mData_sandbox.tres" id="4_i71h3"]
+[ext_resource type="Script" uid="uid://ck03kqy61d1m3" path="res://src/common/main/game.gd" id="1_rx30x"]
+[ext_resource type="Script" uid="uid://b646dhn8pufc5" path="res://src/common/subsystems/scene_loader.gd" id="2_rx30x"]
+[ext_resource type="Script" uid="uid://brupmecsdsjuk" path="res://src/common/subsystems/mission_log.gd" id="3_rx30x"]
+[ext_resource type="Resource" uid="uid://p1tymvir1pnv" path="res://src/resources/mission_resources/mData_sandbox.tres" id="4_xmjpk"]
+[ext_resource type="Script" uid="uid://clm6guu3c7v3u" path="res://src/common/subsystems/augment_manager.gd" id="5_fahi4"]
+[ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="5_g7j68"]
 
-[node name="Game" type="Node" unique_id=701013822 node_paths=PackedStringArray("level_root", "enitities_root", "hud_root", "ui_root", "transition_root", "debug_root", "scene_loader", "mission_log")]
+[node name="Game" type="Node" unique_id=701013822 node_paths=PackedStringArray("level_root", "enitities_root", "hud_root", "ui_root", "transition_root", "debug_root", "scene_loader", "mission_log", "augment_manager")]
 process_mode = 3
-script = ExtResource("1_bnsfs")
+script = ExtResource("1_rx30x")
 level_root = NodePath("World/Level")
 enitities_root = NodePath("World/Entities")
 hud_root = NodePath("HudLayer/HUD")
@@ -17,15 +18,19 @@ transition_root = NodePath("TransitionLayer/Transition")
 debug_root = NodePath("DebugLayer/Debug")
 scene_loader = NodePath("Subsystems/SceneLoader")
 mission_log = NodePath("Subsystems/MissionLog")
+augment_manager = NodePath("Subsystems/AugmentManager")
 
 [node name="Subsystems" type="Node" parent="." unique_id=2083676148]
 
 [node name="SceneLoader" type="Node" parent="Subsystems" unique_id=1950211179]
-script = ExtResource("2_amj6u")
+script = ExtResource("2_rx30x")
 
 [node name="MissionLog" type="Node" parent="Subsystems" unique_id=1106080216]
-script = ExtResource("2_ulfwm")
-selected_mission = ExtResource("4_i71h3")
+script = ExtResource("3_rx30x")
+selected_mission = ExtResource("4_xmjpk")
+
+[node name="AugmentManager" type="Node" parent="Subsystems" unique_id=543136194]
+script = ExtResource("5_fahi4")
 
 [node name="World" type="Node3D" parent="." unique_id=1000134336]
 
@@ -44,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("2_i71h3")
+script = ExtResource("5_g7j68")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
 layer = 25

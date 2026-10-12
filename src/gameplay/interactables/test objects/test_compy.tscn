@@ -46,6 +46,7 @@ interaction_area = NodePath("InteractionArea")
 mesh = NodePath("CSGBakedMeshInstance3D")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2129080015]
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=907429507]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 0)

@@ -19,6 +19,7 @@ static var current: Game
 
 @export_group("Subsytem Nodes")
 @export var scene_loader: SceneLoader
+@export var interface_loader: InterfaceLoader
 @export var mission_log: MissionLog
 @export var augment_manager: AugmentManager
 
@@ -33,7 +34,8 @@ func _init() -> void:
 func _ready() -> void:
 	randomize()
 	_init_player()
-	scene_loader.load_scene(initial_scene)
+	_init_subsystems()
+	scene_loader.load_level_scene(initial_scene)
 
 
 func _input(_event: InputEvent) -> void:
@@ -41,6 +43,7 @@ func _input(_event: InputEvent) -> void:
 		Util.screenshot()
 
 
+## Validate the player scene and instatiate into Entities root.
 func _init_player() -> void:
 	var player_scene : PackedScene = ResourceLoader.load(PLAYER_UID) as PackedScene
 	if is_instance_valid(player_scene):
@@ -55,18 +58,28 @@ func _init_player() -> void:
 		return
 
 
+func _init_subsystems() -> void:
+	interface_loader.hud_opened.connect(_on_hud_opened)
+
+
 ## Validates file path of request and passes it to the scene_loader subsystem.
-func load_scene_request(_path: String) -> void:
+func load_level_request(_path: String) -> void:
 	if FileAccess.file_exists(_path):
 		print("Sending load_scene request to loader for: %s" %_path)
-		scene_loader.load_scene(_path)
+		scene_loader.load_level_scene(_path)
 	else:
 		printerr("Invalid file path at: %s" %_path)
 
 
-func load_hud(_path: String) -> void:
+## Validates the file path of 
+func load_hud_request(_path: String) -> void:
 	if FileAccess.file_exists(_path):
 		print("Sending load_scene request to loader for: %s" %_path)
-		scene_loader.load_scene(_path)
+		interface_loader.load_hud_scene(_path)
 	else:
 		printerr("Invalid file path at: %s" %_path)
+
+
+func _on_hud_opened() -> void:
+	Util.free_mouse()
+	player.freeze()

@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 			set_process(false)
 
 
-func load_scene(_path: String) -> void:
+func load_level_scene(_path: String) -> void:
 	scene_path = _path
 	
 	var new_load_screen = loading_screen.instantiate()
@@ -46,6 +46,17 @@ func load_scene(_path: String) -> void:
 	
 	await new_load_screen.loading_screen_ready
 	start_load()
+
+
+func load_hud_scene(_path) -> void:
+	#Make sure no other HUD elements are in the tree. Might change this later.
+	Util.kill_children(Game.current.hud_root) 
+	
+	var loaded_scene = ResourceLoader.load(_path) as PackedScene
+	var new_hud =  loaded_scene.instantiate()
+	Game.current.hud_root.add_child(new_hud)
+	Util.free_mouse()
+
 
 
 func start_load() -> void:
@@ -59,7 +70,8 @@ func deferred_load_level() -> void:
 		Game.current.player.freeze()
 		current_level.queue_free()
 		current_level = null
-	await get_tree().process_frame
+		
+	await get_tree().process_frame #wait a frame to make sure old level cleans up.
 	
 	if is_instance_valid(loaded_resource):
 		current_level = loaded_resource.instantiate() as LevelBase

@@ -14,10 +14,10 @@ var can_aim: bool = true
 var is_disabled: bool = false
 
 
-func setup_weapons():
-	if Inventory.equipped_weapons.is_empty():
-		printerr("No weapons equipped.")
-		return
-	
-	for w: WeaponData in Inventory.equipped_weapons:
-		print(w.weapon_name)
+#func setup_weapons():
+	#if Inventory.equipped_weapons.is_empty():
+		#printerr("No weapons equipped.")
+		#return
+	#
+	#for w: WeaponData in Inventory.equipped_weapons:
+		#print(w.weapon_name)

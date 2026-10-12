@@ -7,5 +7,5 @@ func _on_tab_container_tab_selected(tab: int) -> void:
 
 
 func _on_close_button_pressed() -> void:
-	Events.computer_closed.emit()
+	#Events.computer_closed.emit()
 	queue_free()

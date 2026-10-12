@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1kpbnub4yt7v"]
+
+[ext_resource type="Shader" uid="uid://b1w6p347h11ve" path="res://assets/shaders/outline.gdshader" id="1_jeau0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hiwha"]
+render_priority = 0
+shader = ExtResource("1_jeau0")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/size = 1.0499999988824
+
+[resource]
+next_pass = SubResource("ShaderMaterial_hiwha")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.03137255)
+emission_enabled = true
+emission = Color(1, 1, 1, 0.09411765)
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)

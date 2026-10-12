@@ -7,15 +7,19 @@ extends Control
 @onready var select_button: Button = %SelectButton
 
 var mission_log: MissionLog
-var mission_tile : PackedScene = preload("res://src/ui/PC/mission select/mission_select_tile.tscn")
+var mission_tile : PackedScene = preload(Constants.SCENE_PATHS_UI.mission_slot)
 var _selected_mission : MissionData
 
+
 func _ready() -> void:
-	setup.call_deferred()
+	if Game.current:
+		_setup.call_deferred()
+	else:
+		_load_default_missions.call_deferred()
 
-
-func setup():
+func _setup() -> void:
 	mission_log = Game.current.mission_log
+	
 	for m in default_missions:
 		if not mission_log.available_missions.has(m):
 			mission_log.available_missions.append(m)
@@ -23,24 +27,29 @@ func setup():
 	update_mission_list()
 
 
-func update_mission_list():
-	var list = mission_list.get_children()
-	if not list.is_empty():
-		for i in mission_list.get_children():
-			i.queue_free()
+func _load_default_missions():
+	Util.kill_children(mission_list)
+	for m in default_missions:
+		var tile: MissionSelectTile = mission_tile.instantiate()
+		mission_list.add_child(tile)
+		tile.setup(m)
+
+
+func update_mission_list() -> void:
+	Util.kill_children(mission_list) #Delete all mission slots.
 	
 	if mission_log.available_missions.is_empty():
-		printerr("No available missions in mission log.")
+		printerr("No available missions in mission log. Can't do much right now...")
 		return
 	
 	for m in mission_log.available_missions:
-		var tile : MissionSelectTile = mission_tile.instantiate()
+		var tile: MissionSelectTile = mission_tile.instantiate()
 		mission_list.add_child(tile)
 		tile.mission_selected.connect(_on_mission_tile_pressed)
 		tile.setup(m)
 
 
-func _on_mission_tile_pressed(_mission: MissionData):
+func _on_mission_tile_pressed(_mission: MissionData) -> void:
 	if mission_log.selected_mission != _mission:
 		select_button.disabled = false
 	else:

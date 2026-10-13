@@ -233,7 +233,6 @@ layout_mode = 2
 text = "Buy Body Augments"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1436616702]
-visible = false
 material = SubResource("ShaderMaterial_kv2ug")
 layout_mode = 1
 anchors_preset = 15

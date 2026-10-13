@@ -1,4 +1,4 @@
-class_name HUD
+
 extends Control
 
 signal hud_opened

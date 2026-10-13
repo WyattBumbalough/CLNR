@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://p1tymvir1pnv" path="res://src/resources/mission_resources/mData_sandbox.tres" id="4_xmjpk"]
 [ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/common/classes/mission_data.gd" id="5_27fys"]
 [ext_resource type="Script" uid="uid://clm6guu3c7v3u" path="res://src/common/subsystems/augment_manager.gd" id="5_fahi4"]
-[ext_resource type="Script" uid="uid://bk6h8bnbckm0b" path="res://src/common/main/hud.gd" id="5_g7j68"]
 [ext_resource type="Resource" uid="uid://cl3s2oddtdu7j" path="res://src/resources/mission_resources/mData_apartment.tres" id="6_bwfh6"]
 [ext_resource type="Resource" uid="uid://085hs6gdcw23" path="res://src/resources/mission_resources/mData_testlevel.tres" id="7_fp0q7"]
 
@@ -21,7 +20,7 @@ ui_root = NodePath("UILayer/UI")
 transition_root = NodePath("TransitionLayer/Transition")
 debug_root = NodePath("DebugLayer/Debug")
 scene_loader = NodePath("Subsystems/SceneLoader")
-interface_loader = NodePath("Subsystems/InterfaceLoader")
+interface_loader = NodePath("Subsystems/InterfaceManager")
 mission_log = NodePath("Subsystems/MissionLog")
 augment_manager = NodePath("Subsystems/AugmentManager")
 
@@ -30,8 +29,12 @@ augment_manager = NodePath("Subsystems/AugmentManager")
 [node name="SceneLoader" type="Node" parent="Subsystems" unique_id=1950211179]
 script = ExtResource("2_rx30x")
 
-[node name="InterfaceLoader" type="Node" parent="Subsystems" unique_id=1415366754]
+[node name="InterfaceManager" type="Node" parent="Subsystems" unique_id=1415366754 node_paths=PackedStringArray("hud_root", "ui_root", "transition_root", "debug_root")]
 script = ExtResource("3_3d3mc")
+hud_root = NodePath("../../HudLayer/HUD")
+ui_root = NodePath("../../UILayer/UI")
+transition_root = NodePath("../../TransitionLayer/Transition")
+debug_root = NodePath("../../DebugLayer/Debug")
 
 [node name="MissionLog" type="Node" parent="Subsystems" unique_id=1106080216]
 script = ExtResource("3_rx30x")
@@ -57,7 +60,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("5_g7j68")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1126171037]
 layer = 25

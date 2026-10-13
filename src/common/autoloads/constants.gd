@@ -7,6 +7,7 @@ const OUTLINE_MAT: String = "uid://dphohipmjr40m" # Outline shader for interacta
 
 ## Dictionary containing paths for certain UI scenes.
 const SCENE_PATHS_UI: Dictionary = {
+	"overlay": "uid://c574faov3usan",
 	"pc": "uid://bbseperv0qus3",
 	"mission_slot": "uid://bknrw2snloic6",
 	"radio" : null,

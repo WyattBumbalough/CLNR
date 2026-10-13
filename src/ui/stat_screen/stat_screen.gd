@@ -27,7 +27,7 @@ func open():
 	show()
 
 func _on_leg_pressed() -> void:
-	AugmentManager.install_augment(leg_aug)
+	Game.current.augment_manager.install_augment(leg_aug)
 
 
 func _on_head_pressed() -> void:

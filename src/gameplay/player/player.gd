@@ -34,7 +34,7 @@ const SENS = .002
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-var hud : HUD
+
 
 var input_direction : Vector2
 var interact_ray_result
@@ -44,10 +44,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	state_machine.initialize(self)
 	align_camera()
-	
-	if hud:
-		hud.hud_opened.connect(_on_hud_opened)
-		hud.hud_closed.connect(_on_hud_closed)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.handle_input(event)

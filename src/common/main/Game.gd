@@ -19,7 +19,7 @@ static var current: Game
 
 @export_group("Subsytem Nodes")
 @export var scene_loader: SceneLoader
-@export var interface_loader: InterfaceLoader
+@export var interface_loader: InterfaceManager
 @export var mission_log: MissionLog
 @export var augment_manager: AugmentManager
 
@@ -60,6 +60,7 @@ func _init_player() -> void:
 
 func _init_subsystems() -> void:
 	interface_loader.hud_opened.connect(_on_hud_opened)
+	interface_loader.hud_closed.connect(_on_hud_closed)
 
 
 ## Validates file path of request and passes it to the scene_loader subsystem.
@@ -83,3 +84,8 @@ func load_hud_request(_path: String) -> void:
 func _on_hud_opened() -> void:
 	Util.free_mouse()
 	player.freeze()
+
+
+func _on_hud_closed() -> void:
+	Util.capture_mouse()
+	player.unfreeze()

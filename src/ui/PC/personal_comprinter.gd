@@ -1,4 +1,4 @@
-extends Control
+extends HudElement
 
 
 func _on_tab_container_tab_selected(tab: int) -> void:
@@ -7,5 +7,5 @@ func _on_tab_container_tab_selected(tab: int) -> void:
 
 
 func _on_close_button_pressed() -> void:
-	#Events.computer_closed.emit()
-	queue_free()
+	hide()
+	InterfaceManager.current.close_hud()

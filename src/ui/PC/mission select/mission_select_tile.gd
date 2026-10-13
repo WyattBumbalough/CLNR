@@ -13,7 +13,9 @@ signal mission_selected(data)
 	#label.text = mission_data.mission_title
 	#texture_rect.texture = mission_data.thumbnail
 
+
 func setup(_mission_data: MissionData):
+	mission_data  =_mission_data
 	label.text = _mission_data.mission_title
 	texture_rect.texture = _mission_data.thumbnail
 

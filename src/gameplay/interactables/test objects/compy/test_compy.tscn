@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cocpu62mrsibx" path="res://src/gameplay/interactables/test objects/compy/test_compy.gd" id="1_6gdth"]
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="1_d02ph"]
-[ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/gameplay/interactables/interactable.gd" id="1_jyn3s"]
+[ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/common/classes/interactable.gd" id="1_jyn3s"]
 [ext_resource type="Material" uid="uid://dphohipmjr40m" path="res://assets/textures/materials/outline_mat.tres" id="3_8rhvm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6x17s"]

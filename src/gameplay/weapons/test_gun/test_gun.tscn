@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c1jsgaem7tud1"]
 
 [ext_resource type="Script" uid="uid://ba26tt5h201la" path="res://src/gameplay/weapons/weapon_visual.gd" id="1_hcn1j"]
-[ext_resource type="Script" uid="uid://d3xxub3cdlep5" path="res://src/resources/weapon_resources/weapon_data.gd" id="2_qi5kg"]
+[ext_resource type="Script" uid="uid://d3xxub3cdlep5" path="res://src/common/classes/weapon_data.gd" id="2_qi5kg"]
 
 [sub_resource type="Resource" id="Resource_jtl43"]
 script = ExtResource("2_qi5kg")

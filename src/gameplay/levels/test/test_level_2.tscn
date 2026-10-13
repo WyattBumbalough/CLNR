@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bf1ufjqy1abf"]
 
-[ext_resource type="Script" uid="uid://dx75tiktrkon6" path="res://src/levels/BaseLevel.gd" id="1_qmhfo"]
+[ext_resource type="Script" uid="uid://dx75tiktrkon6" path="res://src/common/classes/BaseLevel.gd" id="1_qmhfo"]
 [ext_resource type="Material" uid="uid://b68l5axdwrlc6" path="res://assets/textures/materials/grid.tres" id="2_0jyuh"]
 [ext_resource type="Script" uid="uid://co3ws05vglmxk" path="res://src/gameplay/interactables/test objects/test_door.gd" id="3_lagnl"]
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="4_cbxxg"]

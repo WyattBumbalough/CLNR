@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MissionData" format=3 uid="uid://p1tymvir1pnv"]
 
-[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/mission_resources/mission_data.gd" id="1_17b7o"]
+[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/common/classes/mission_data.gd" id="1_17b7o"]
 [ext_resource type="Texture2D" uid="uid://bx1jbflludojd" path="res://assets/ss/sandbox.png" id="2_bhn8w"]
 
 [resource]

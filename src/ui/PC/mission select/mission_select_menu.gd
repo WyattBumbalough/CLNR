@@ -13,7 +13,7 @@ var _selected_mission : MissionData
 
 func _ready() -> void:
 	if Game.current:
-		_setup.call_deferred()
+		_setup()
 	else:
 		_load_default_missions.call_deferred()
 

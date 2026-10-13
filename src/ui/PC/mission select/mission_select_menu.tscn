@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1bnowij5vlct" path="res://src/ui/PC/mission select/mission_select_menu.gd" id="1_bgc34"]
 [ext_resource type="PackedScene" uid="uid://bknrw2snloic6" path="res://src/ui/PC/mission select/mission_select_tile.tscn" id="1_wtj5n"]
-[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/resources/mission_resources/mission_data.gd" id="2_0opoa"]
+[ext_resource type="Script" uid="uid://c40tlxftlpiwu" path="res://src/common/classes/mission_data.gd" id="2_0opoa"]
 [ext_resource type="Resource" uid="uid://cl3s2oddtdu7j" path="res://src/resources/mission_resources/mData_apartment.tres" id="3_fwqfo"]
 [ext_resource type="Resource" uid="uid://085hs6gdcw23" path="res://src/resources/mission_resources/mData_testlevel.tres" id="4_11aip"]
 [ext_resource type="Resource" uid="uid://p1tymvir1pnv" path="res://src/resources/mission_resources/mData_sandbox.tres" id="5_11aip"]

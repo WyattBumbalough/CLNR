@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://btigawlcwg3mt"]
 
 [ext_resource type="Script" uid="uid://casrpwep7d4t3" path="res://src/gameplay/interactables/test objects/aug_bay/augmentation_bay.gd" id="1_aoyju"]
-[ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/gameplay/interactables/interactable.gd" id="1_pabfb"]
+[ext_resource type="Script" uid="uid://cxtlhatycaedd" path="res://src/common/classes/interactable.gd" id="1_pabfb"]
 [ext_resource type="Script" uid="uid://dachjs8n8lmbw" path="res://src/common/components/interaction_area.gd" id="2_0xaay"]
 [ext_resource type="AudioStream" uid="uid://b6r48kmauc2to" path="res://assets/sfx/foley/hyd2.mp3" id="3_0xaay"]
 [ext_resource type="AudioStream" uid="uid://bi6gu6sebnn8g" path="res://assets/sfx/foley/hyd1.mp3" id="3_qm2q1"]

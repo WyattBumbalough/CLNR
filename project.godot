@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/at-icons/plugin.cfg", "res://addons/godo
 [file_customization]
 
 folder_colors={
+"res://assets/": "yellow",
 "res://src/ui/": "green"
 }
 
